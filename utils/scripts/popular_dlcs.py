@@ -8,21 +8,21 @@ DB_NAME = "jogosdb"
 async def popular():
     client = AsyncIOMotorClient(MONGO_URI)
     db = client[DB_NAME]
-    collection = db["jogos"]
+    collection = db["dlcs"]
 
-    jogos = []
+    dlcs = []
     for i in range(1, 31):
-        jogos.append({
+        dlcs.append({
             "_id": i,
-            "titulo": f"Jogo {i}",
+            "titulo": f"DLC {i}",
             "descricao": f"Descrição do Jogo {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),
             "preco": int(round((50 + i * 1.5) * 100)),  # ← aqui!
-            "desenvolvedora": f"Estúdio {i % 5 + 1}"
+            "jogo_id": f"{i}"
         })
 
-    result = await collection.insert_many(jogos)
-    print(f"{len(result.inserted_ids)} jogos inseridos.")
+    result = await collection.insert_many(dlcs)
+    print(f"{len(result.inserted_ids)} dlcs inseridos.")
 
 if __name__ == "__main__":
     asyncio.run(popular())

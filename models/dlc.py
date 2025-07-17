@@ -3,27 +3,27 @@ from typing import Optional
 from datetime import date
 import math
 
-class JogoBase(BaseModel):
+class DLCBase(BaseModel):
     titulo: str
     descricao: Optional[str] = None
     data_lancamento: date
-    preco: float 
-    desenvolvedora: str
+    preco: float
+    jogo_id: str
 
     def dict(self, **kwargs):
         base = super().dict(**kwargs)
         base["preco"] = int(math.floor(self.preco * 100)) 
         return base
 
-class JogoCreate(JogoBase):
+class DLCCreate(DLCBase):
     pass
 
-class JogoUpdate(BaseModel):
+class DLCUpdate(BaseModel):
     titulo: Optional[str] = None
     descricao: Optional[str] = None
     data_lancamento: Optional[date] = None
     preco: Optional[float] = None
-    desenvolvedora: Optional[str] = None
+    jogo_id: Optional[str] = None
 
     def dict(self, **kwargs):
         base = super().dict(**kwargs)
@@ -31,7 +31,7 @@ class JogoUpdate(BaseModel):
             base["preco"] = int(math.floor(base["preco"] * 100))
         return base
 
-class JogoDB(JogoBase):
+class DLCDB(DLCBase):
     id: str = Field(alias="_id")
 
     @classmethod

@@ -35,3 +35,73 @@ _id
 2025-07-17 01:20:24,852 - INFO - [SUCESSO] Listagem de 31 jogo(s)
 2025-07-17 01:20:45,426 - INFO - [SUCESSO] Jogo criado com ID 68784fedf83530f11d7925c7
 2025-07-17 01:20:55,133 - INFO - [SUCESSO] Listagem de 32 jogo(s)
+2025-07-17 13:36:29,410 - ERROR - [ERRO] Falha ao criar DLC: Invalid document {'titulo': 'string', 'descricao': 'string', 'data_lancamento': datetime.date(2025, 7, 17), 'preco': 0, 'desenvolvedora': 'string', 'jogo_id': 'string', '_id': ObjectId('6878fc5dc7abd70965e9818f')} | cannot encode object: datetime.date(2025, 7, 17), of type: <class 'datetime.date'>
+2025-07-17 13:36:31,868 - ERROR - [ERRO] Falha ao criar DLC: Invalid document {'titulo': 'string', 'descricao': 'string', 'data_lancamento': datetime.date(2025, 7, 17), 'preco': 0, 'desenvolvedora': 'string', 'jogo_id': 'string', '_id': ObjectId('6878fc5fc7abd70965e98190')} | cannot encode object: datetime.date(2025, 7, 17), of type: <class 'datetime.date'>
+2025-07-17 13:44:36,210 - ERROR - [ERRO] Falha ao criar DLC: name 'convert_date_to_datetime' is not defined
+2025-07-17 13:54:32,417 - INFO - [SUCESSO] DLC criada com id 68790098a3fd7a56b1f4df60
+2025-07-17 13:56:44,727 - INFO - [SUCESSO] DLC 68790098a3fd7a56b1f4df60 atualizada.
+2025-07-17 13:57:05,762 - INFO - [SUCESSO] Listagem de 32 jogo(s)
+2025-07-17 14:03:38,712 - INFO - [SUCESSO] Listagem de 32 jogo(s)
+2025-07-17 14:04:12,403 - ERROR - [ERRO] Falha ao criar jogo: name 'math' is not defined
+2025-07-17 14:06:40,397 - INFO - [SUCESSO] Jogo criado com ID 687903706a66288ec305499f
+2025-07-17 14:06:46,923 - INFO - [SUCESSO] Listagem de 33 jogo(s)
+2025-07-17 14:06:59,793 - ERROR - [ERRO] Jogo string já possui DLC.
+2025-07-17 14:07:17,629 - INFO - [SUCESSO] DLC criada com id 687903956a66288ec30549a0
+2025-07-17 14:07:17,629 - ERROR - [ERRO] Falha ao criar DLC: math.floor() takes exactly one argument (2 given)
+2025-07-17 14:08:48,995 - ERROR - [ERRO] Jogo asdasd já possui DLC.
+2025-07-17 14:09:04,383 - INFO - [SUCESSO] DLC criada com id 68790400d9fda7ccf844ca7e
+2025-07-17 14:09:37,270 - INFO - [SUCESSO] DLC criada com id 68790421917e28eed4a92218
+2025-07-17 14:10:58,591 - INFO - [SUCESSO] Jogo criado com ID 68790472917e28eed4a92219
+2025-07-17 14:11:25,769 - INFO - [SUCESSO] DLC criada com id 6879048d917e28eed4a9221a
+2025-07-17 14:12:07,658 - INFO - [SUCESSO] Jogo criado com ID 687904b7917e28eed4a9221b
+2025-07-17 14:12:16,641 - INFO - [SUCESSO] Listagem de 35 jogo(s)
+2025-07-17 14:12:46,223 - INFO - [SUCESSO] DLC criada com id 687904de917e28eed4a9221c
+2025-07-17 18:36:13,723 - INFO - [SUCESSO] DLC criada com id 6879429d47128fb4c4413f0e
+2025-07-17 18:36:31,268 - INFO - [SUCESSO] Jogo criado com ID 687942af47128fb4c4413f0f
+2025-07-17 18:36:40,434 - INFO - [SUCESSO] Listagem de 36 jogo(s)
+2025-07-17 18:38:41,921 - INFO - [SUCESSO] Listagem de 36 jogo(s)
+2025-07-17 18:38:44,319 - INFO - [SUCESSO] Listagem de 36 jogo(s)
+2025-07-17 18:47:01,208 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 18:47:19,615 - INFO - [SUCESSO] Jogo criado com ID 687945376b93fcc02d8b273e
+2025-07-17 18:47:27,670 - INFO - [SUCESSO] DLC criada com id 6879453f6b93fcc02d8b273f
+2025-07-17 18:55:40,718 - INFO - [SUCESSO] Jogo criado com ID 6879472c78a0f0e636997105
+2025-07-17 18:55:46,767 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 18:55:59,576 - INFO - [SUCESSO] DLC criada com id 6879473f78a0f0e636997106
+2025-07-17 18:56:56,684 - INFO - [SUCESSO] DLC criada com id 68794778a16b100ddd6095cc
+2025-07-17 19:07:31,694 - INFO - [SUCESSO] Jogo criado com ID 687949f36f76accd3205bc38
+2025-07-17 19:07:31,694 - ERROR - [ERRO] Falha ao criar jogo: JogoDB.from_mongo() got an unexpected keyword argument 'titulo'
+2025-07-17 19:08:25,360 - INFO - [SUCESSO] Jogo criado com ID 68794a2980f58dbb1d315e58
+2025-07-17 19:08:38,717 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 19:09:42,797 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 19:09:44,916 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 19:09:51,223 - INFO - [SUCESSO] Jogo criado com ID 68794a7f73735fed43bc1993
+2025-07-17 19:12:16,183 - INFO - [SUCESSO] DLC criada com id 68794b106874ee4de6728927
+2025-07-17 19:14:49,398 - INFO - [SUCESSO] Jogo criado com ID 68794ba90aba2f50dd07e743
+2025-07-17 19:14:54,672 - INFO - [SUCESSO] Listagem de 3 jogo(s)
+2025-07-17 19:15:10,927 - INFO - [SUCESSO] Jogo criado com ID 68794bbe0aba2f50dd07e744
+2025-07-17 19:19:05,006 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 19:19:59,204 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 19:20:45,746 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 19:42:13,439 - ERROR - [ERRO] Falha ao exibir quantidade de jogos: 'coroutine' object has no attribute '__len__'
+2025-07-17 19:43:03,477 - ERROR - [ERRO] Falha ao exibir quantidade de jogos: object method-wrapper can't be used in 'await' expression
+2025-07-17 19:43:21,305 - ERROR - [ERRO] Falha ao exibir quantidade de jogos: expected 1 argument, got 0
+2025-07-17 19:44:08,094 - ERROR - [ERRO] Falha ao exibir quantidade de jogos: 'coroutine' object has no attribute 'len'
+2025-07-17 19:44:37,758 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 19:44:37,758 - INFO - [SUCESSO] Quantidade de jogos cadastrados: 0
+2025-07-17 19:44:55,087 - INFO - [SUCESSO] Listagem de 0 DLC(s)
+2025-07-17 19:44:55,087 - INFO - [SUCESSO] Quantidade de DLCs cadastrados: 0
+2025-07-17 19:45:32,463 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-17 19:45:32,463 - ERROR - [ERRO] Falha ao listar DLCs: 1 validation error for DLCDB
+jogo_id
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-17 19:45:32,463 - ERROR - [ERRO] Falha ao exibir quantidade de DLCs: 1 validation error for DLCDB
+jogo_id
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-17 19:45:42,677 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 19:45:42,678 - INFO - [SUCESSO] Quantidade de jogos cadastrados: 30
+2025-07-17 19:46:50,074 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 19:47:21,925 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-17 19:47:21,926 - INFO - [SUCESSO] Quantidade de DLCs cadastrados: 30
+2025-07-17 19:47:37,184 - INFO - [SUCESSO] Listagem de 30 DLC(s)

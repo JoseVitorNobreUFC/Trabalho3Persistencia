@@ -7,7 +7,7 @@ async def criar_jogo(jogo: JogoCreate) -> JogoDB:
     try:
         id = await jogo_repository.insert_jogo(jogo)
         info_(f"[SUCESSO] Jogo criado com ID {id}")
-        return JogoDB(**jogo.dict(), _id=id)
+        return JogoDB.from_mongo({**jogo.dict(), "_id":id})
     except Exception as e:
         error_(f"[ERRO] Falha ao criar jogo: {str(e)}")
         raise
@@ -80,4 +80,13 @@ async def buscar_jogos(
         return resultado
     except Exception as e:
         error_(f"[ERRO] Falha ao filtrar jogos: {str(e)}")
+        raise
+
+async def exibir_quantidade():
+    try:
+        quantidade = len(await listar_jogos())
+        info_(f"[SUCESSO] Quantidade de jogos cadastrados: {quantidade}")
+        return quantidade
+    except Exception as e:
+        error_(f"[ERRO] Falha ao exibir quantidade de jogos: {str(e)}")
         raise

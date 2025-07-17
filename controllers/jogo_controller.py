@@ -27,6 +27,11 @@ async def deletar_jogo(jogo_id: str):
         raise HTTPException(status_code=404, detail="Jogo não encontrado para deletar")
     return {"message": "Jogo deletado com sucesso"}
 
+@router.get("/quantidade")
+async def exibir_quantidade():
+    quantidade = await jogo_service.exibir_quantidade()
+    return {"quantidade": quantidade}
+
 @router.get("/search")
 async def buscar_jogos(
     titulo: Optional[str] = None,

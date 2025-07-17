@@ -10,3 +10,4 @@ client = AsyncIOMotorClient(MONGO_URI)
 db = client[DB_NAME]
 
 jogo_collection = db["jogos"]
+dlc_collection = db["dlcs"]
