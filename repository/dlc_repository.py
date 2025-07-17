@@ -32,6 +32,10 @@ async def update_dlc(dlc_id: str, data: DLCUpdate) -> bool:
     )
     return result.modified_count > 0
 
+async def get_dlc_by_jogo(jogo_id: str) -> dict | None:
+    doc = await dlc_collection.find_one({"jogo_id": jogo_id})
+    return parse_mongo_id(doc) if doc else None
+
 async def delete_dlc(dlc_id: str) -> bool:
     result = await dlc_collection.delete_one({"_id": ObjectId(dlc_id)})
     return result.deleted_count > 0

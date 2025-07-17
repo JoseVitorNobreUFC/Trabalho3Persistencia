@@ -7,7 +7,10 @@ router = APIRouter(prefix="/jogos", tags=["Jogos"])
 
 @router.post("/", response_model=JogoDB)
 async def criar_jogo(jogo: JogoCreate):
-    return await jogo_service.criar_jogo(jogo)
+    try:
+        return await jogo_service.criar_jogo(jogo)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @router.get("/", response_model=list[JogoDB])
 async def listar_jogos():

@@ -24,6 +24,10 @@ async def get_jogo_by_id(jogo_id: str) -> dict | None:
     doc = await jogo_collection.find_one({"_id": ObjectId(jogo_id)})
     return parse_mongo_id(doc) if doc else None
 
+async def get_jogo_by_titulo(titulo: str) -> dict | None:
+    doc = await jogo_collection.find_one({"titulo": titulo})
+    return parse_mongo_id(doc) if doc else None
+
 async def update_jogo(jogo_id: str, dados: JogoUpdate) -> bool:
     update_data = {k: v for k, v in dados.dict(exclude_unset=True).items()}
     if "data_lancamento" in update_data:

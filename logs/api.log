@@ -105,3 +105,13 @@ jogo_id
 2025-07-17 19:47:21,925 - INFO - [SUCESSO] Listagem de 30 DLC(s)
 2025-07-17 19:47:21,926 - INFO - [SUCESSO] Quantidade de DLCs cadastrados: 30
 2025-07-17 19:47:37,184 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-17 19:48:34,736 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 19:49:02,400 - INFO - [SUCESSO] Jogo criado com ID 687953aeb237ddfaac80f72f
+2025-07-17 19:49:08,585 - INFO - [SUCESSO] Jogo criado com ID 687953b4b237ddfaac80f730
+2025-07-17 19:57:03,789 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 19:57:13,847 - INFO - [SUCESSO] Jogo criado com ID 68795599dd2066296d88dc75
+2025-07-17 19:57:16,854 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 19:57:16,854 - ERROR - [ERRO] Falha ao criar jogo: Jogo string ja cadastrado
+2025-07-17 19:58:24,705 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 20:00:57,040 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 20:00:57,040 - ERROR - [ERRO] Falha ao criar jogo: Jogo string ja cadastrado

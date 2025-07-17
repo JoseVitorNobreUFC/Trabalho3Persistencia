@@ -6,18 +6,18 @@ from bson.errors import InvalidId
 from typing import Optional
 
 async def criar_dlc(dlc: DLCCreate):
-    # Verifica se o jogo existe
-    jogo = await get_jogo_by_id(dlc.jogo_id)
-    if not jogo:
-        error_(f"[ERRO] Jogo {dlc.jogo_id} não encontrado.")
-        raise ValueError("O jogo informado não existe.")
-
-    # Verifica se já existe uma DLC associada
-    if await dlc_repository.get_dlc_by_jogo(dlc.jogo_id):
-        error_(f"[ERRO] Jogo {dlc.jogo_id} já possui DLC.")
-        raise ValueError("Esse jogo já possui uma DLC registrada.")
-
     try:
+        # Verifica se o jogo existe
+        jogo = await get_jogo_by_id(dlc.jogo_id)
+        if not jogo:
+            error_(f"[ERRO] Jogo {dlc.jogo_id} não encontrado.")
+            raise ValueError("O jogo informado não existe.")
+
+        # Verifica se já existe uma DLC associada
+        if await dlc_repository.get_dlc_by_jogo(dlc.jogo_id):
+            error_(f"[ERRO] Jogo {dlc.jogo_id} já possui DLC.")
+            raise ValueError("Esse jogo já possui uma DLC registrada.")
+
         id = await dlc_repository.insert_dlc(dlc)
         info_(f"[SUCESSO] DLC criada com id {id}")
         return DLCDB.from_mongo({**dlc.dict(), "_id": id})

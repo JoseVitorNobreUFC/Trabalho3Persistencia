@@ -5,6 +5,10 @@ from typing import Optional
 
 async def criar_jogo(jogo: JogoCreate) -> JogoDB:
     try:
+        if await jogo_repository.get_jogo_by_titulo(jogo.titulo):
+            error_(f"[ERRO] Jogo {jogo.titulo} ja cadastrado")
+            raise ValueError(f"Jogo {jogo.titulo} ja cadastrado")
+        
         id = await jogo_repository.insert_jogo(jogo)
         info_(f"[SUCESSO] Jogo criado com ID {id}")
         return JogoDB.from_mongo({**jogo.dict(), "_id":id})
@@ -35,11 +39,20 @@ async def buscar_por_id(jogo_id: str) -> JogoDB | None:
 
 async def atualizar_jogo(jogo_id: str, dados: JogoUpdate) -> bool:
     try:
+        jogo_existente = await jogo_repository.get_jogo_by_id(jogo_id)
+        if not jogo_existente:
+            error_(f"[ERRO] Jogo com ID {jogo_id} nao encontrado para atualizar")
+            raise ValueError("Jogo nao encontrado.")
+        
+        if data.titulo and await jogo_repository.get_jogo_by_titulo(data.titulo):
+            error_(f"[ERRO] Jogo {data.titulo} ja cadastrado")
+            raise ValueError(f"Jogo {data.titulo} ja cadastrado")
+
         sucesso = await jogo_repository.update_jogo(jogo_id, dados)
         if sucesso:
             info_(f"[SUCESSO] Jogo atualizado com ID {jogo_id}")
         else:
-            error_(f"[ERRO] Jogo com ID {jogo_id} não encontrado para atualizar")
+            error_(f"[ERRO] Jogo com ID {jogo_id} nao encontrado para atualizar")
         return sucesso
     except Exception as e:
         error_(f"[ERRO] Falha ao atualizar jogo {jogo_id}: {str(e)}")
