@@ -14,26 +14,38 @@ async def criar_jogo(jogo: JogoCreate):
 
 @router.get("/", response_model=list[JogoDB])
 async def listar_jogos():
-    return await jogo_service.listar_jogos()
+    try:
+        return await jogo_service.listar_jogos()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.put("/{jogo_id}", response_model=dict)
 async def atualizar_jogo(jogo_id: str, dados: JogoUpdate):
-    atualizado = await jogo_service.atualizar_jogo(jogo_id, dados)
-    if not atualizado:
-        raise HTTPException(status_code=404, detail="Jogo não encontrado para atualizar")
-    return {"message": "Jogo atualizado com sucesso"}
+    try:
+        atualizado = await jogo_service.atualizar_jogo(jogo_id, dados)
+        if not atualizado:
+            raise HTTPException(status_code=404, detail="Jogo nao encontrado para atualizar")
+        return {"message": "Jogo atualizado com sucesso"}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @router.delete("/{jogo_id}", response_model=dict)
 async def deletar_jogo(jogo_id: str):
-    deletado = await jogo_service.deletar_jogo(jogo_id)
-    if not deletado:
-        raise HTTPException(status_code=404, detail="Jogo não encontrado para deletar")
-    return {"message": "Jogo deletado com sucesso"}
+    try:
+        sucesso = await jogo_service.deletar_jogo(jogo_id)
+        if not sucesso:
+            raise HTTPException(status_code=404, detail="Jogo nao encontrado")
+        return {"message": "Jogo deletado com sucesso"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/quantidade")
 async def exibir_quantidade():
-    quantidade = await jogo_service.exibir_quantidade()
-    return {"quantidade": quantidade}
+    try:
+        quantidade = await jogo_service.exibir_quantidade()
+        return {"quantidade": quantidade}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/search")
 async def buscar_jogos(
@@ -50,12 +62,15 @@ async def buscar_jogos(
     orderBy: str = "titulo",
     orderDir: str = Query("asc", pattern="^(asc|desc)$")
 ):
-    return await jogo_service.buscar_jogos(
-        titulo, descricao, desenvolvedora,
-        dia, mes, ano,
-        precoAcimaDe, precoAbaixoDe,
-        page, size, orderBy, orderDir
-    )
+    try:
+        return await jogo_service.buscar_jogos(
+            titulo, descricao, desenvolvedora,
+            dia, mes, ano,
+            precoAcimaDe, precoAbaixoDe,
+            page, size, orderBy, orderDir
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/{jogo_id}", response_model=JogoDB)
 async def obter_jogo(jogo_id: str):

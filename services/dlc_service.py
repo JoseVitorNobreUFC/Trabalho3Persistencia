@@ -107,7 +107,13 @@ async def buscar_dlcs(
             preco_min, preco_max, page, size, order_by, order_dir
         )
         info_(f"[SUCESSO] Filtro de DLCs retornou {len(resultado['content'])} item(ns)")
-        return resultado
+        return {
+            "size": resultado["size"],
+            "page": resultado["page"],
+            "totalPages": resultado["totalPages"],
+            "totalElements": resultado["totalElements"],
+            "content": [DLCDB.from_mongo(d) for d in resultado["content"]]
+        }
     except Exception as e:
         error_(f"[ERRO] Falha ao filtrar DLCs: {str(e)}")
         raise

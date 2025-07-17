@@ -72,13 +72,12 @@ async def buscar_jogos(
             ]
         }
 
-    # Filtro de preço
     if preco_min or preco_max:
         filtro["preco"] = {}
         if preco_min is not None:
-            filtro["preco"]["$gte"] = preco_min
+            filtro["preco"]["$gte"] = preco_min * 100
         if preco_max is not None:
-            filtro["preco"]["$lte"] = preco_max
+            filtro["preco"]["$lte"] = preco_max * 100
 
     total = await jogo_collection.count_documents(filtro)
 

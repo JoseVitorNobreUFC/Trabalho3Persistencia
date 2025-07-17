@@ -115,3 +115,35 @@ jogo_id
 2025-07-17 19:58:24,705 - ERROR - [ERRO] Jogo string ja cadastrado
 2025-07-17 20:00:57,040 - ERROR - [ERRO] Jogo string ja cadastrado
 2025-07-17 20:00:57,040 - ERROR - [ERRO] Falha ao criar jogo: Jogo string ja cadastrado
+2025-07-17 20:01:30,761 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 20:01:44,497 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 20:01:44,497 - INFO - [SUCESSO] Quantidade de jogos cadastrados: 1
+2025-07-17 20:01:53,879 - INFO - [SUCESSO] Jogo criado com ID 687956b19c6511deeebc25c7
+2025-07-17 20:01:58,745 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-17 20:02:19,612 - ERROR - [ERRO] Falha ao atualizar jogo 687956b19c6511deeebc25c7: name 'data' is not defined
+2025-07-17 20:03:20,845 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 20:03:20,845 - ERROR - [ERRO] Falha ao atualizar jogo 687956b19c6511deeebc25c7: Jogo string ja cadastrado
+2025-07-17 20:08:26,922 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 20:08:26,922 - ERROR - [ERRO] Falha ao atualizar jogo 687956b19c6511deeebc25c7: Jogo string ja cadastrado
+2025-07-17 20:08:38,479 - ERROR - [ERRO] Falha ao deletar jogo aaa: 'aaa' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-17 20:08:44,679 - INFO - [SUCESSO] Jogo deletado com ID 687956b19c6511deeebc25c7
+2025-07-17 20:10:07,130 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 20:10:07,130 - INFO - [SUCESSO] Quantidade de jogos cadastrados: 1
+2025-07-17 20:10:16,860 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 20:10:26,267 - INFO - [SUCESSO] Jogo deletado com ID 68795599dd2066296d88dc75
+2025-07-17 20:10:30,838 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 20:10:30,838 - INFO - [SUCESSO] Quantidade de jogos cadastrados: 0
+2025-07-17 20:12:49,314 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 20:13:19,258 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-17 20:13:32,982 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 20:13:44,680 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:13:52,814 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:14:14,543 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:15:43,132 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:16:01,036 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:18:56,401 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:19:13,286 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:19:35,163 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:19:59,821 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 20:20:23,140 - INFO - [SUCESSO] Filtro de DLCs retornou 10 item(ns)
+2025-07-17 20:23:52,938 - INFO - [SUCESSO] Filtro de DLCs retornou 10 item(ns)

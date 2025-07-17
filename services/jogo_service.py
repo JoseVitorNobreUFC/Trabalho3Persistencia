@@ -44,9 +44,9 @@ async def atualizar_jogo(jogo_id: str, dados: JogoUpdate) -> bool:
             error_(f"[ERRO] Jogo com ID {jogo_id} nao encontrado para atualizar")
             raise ValueError("Jogo nao encontrado.")
         
-        if data.titulo and await jogo_repository.get_jogo_by_titulo(data.titulo):
-            error_(f"[ERRO] Jogo {data.titulo} ja cadastrado")
-            raise ValueError(f"Jogo {data.titulo} ja cadastrado")
+        if dados.titulo and await jogo_repository.get_jogo_by_titulo(dados.titulo):
+            error_(f"[ERRO] Jogo {dados.titulo} ja cadastrado")
+            raise ValueError(f"Jogo {dados.titulo} ja cadastrado")
 
         sucesso = await jogo_repository.update_jogo(jogo_id, dados)
         if sucesso:
@@ -90,7 +90,13 @@ async def buscar_jogos(
             preco_min, preco_max, page, size, order_by, order_dir
         )
         info_(f"[SUCESSO] Filtro de jogos retornou {len(resultado['content'])} item(ns)")
-        return resultado
+        return {
+            "size": resultado["size"],
+            "page": resultado["page"],
+            "totalPages": resultado["totalPages"],
+            "totalElements": resultado["totalElements"],
+            "content": [JogoDB.from_mongo(j) for j in resultado["content"]]
+        }
     except Exception as e:
         error_(f"[ERRO] Falha ao filtrar jogos: {str(e)}")
         raise

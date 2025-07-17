@@ -70,13 +70,12 @@ async def buscar_dlcs(
             ]
         }
 
-    # Filtro de preço (convertido para centavos)
     if preco_min is not None or preco_max is not None:
         filtro["preco"] = {}
         if preco_min is not None:
-            filtro["preco"]["$gte"] = preco_min
+            filtro["preco"]["$gte"] = preco_min * 100
         if preco_max is not None:
-            filtro["preco"]["$lte"] = preco_max
+            filtro["preco"]["$lte"] = preco_max * 100
 
     total = await dlc_collection.count_documents(filtro)
 

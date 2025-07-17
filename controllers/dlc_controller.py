@@ -5,34 +5,48 @@ from typing import Optional
 
 router = APIRouter(prefix="/dlcs", tags=["DLCs"])
 
-@router.post("")
+@router.post("/")
 async def criar_dlc(data: DLCCreate):
     try:
         return await dlc_service.criar_dlc(data)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-@router.get("")
+@router.get("/")
 async def listar_dlcs():
-    return await dlc_service.listar_dlcs()
+    try:
+        return await dlc_service.listar_dlcs()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.put("/{dlc_id}")
 async def atualizar_dlc(dlc_id: str, data: DLCUpdate):
-    sucesso = await dlc_service.atualizar_dlc(dlc_id, data)
-    if not sucesso:
-        raise HTTPException(status_code=404, detail="DLC não encontrada")
+    try:
+        atualizado = await dlc_service.atualizar_dlc(dlc_id, data)
+        if not atualizado:
+            raise HTTPException(status_code=404, detail="DLC nao encontrado para atualizar")
+        return {"message": "DLC atualizado com sucesso"}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @router.delete("/{dlc_id}")
 async def deletar_dlc(dlc_id: str):
-    sucesso = await dlc_service.deletar_dlc(dlc_id)
-    if not sucesso:
-        raise HTTPException(status_code=404, detail="DLC não encontrada")
+    try:
+        sucesso = await dlc_service.deletar_dlc(dlc_id)
+        if not sucesso:
+            raise HTTPException(status_code=404, detail="DLC nao encontrado")
+        return {"message": "DLC deletado com sucesso"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.get("/quantidade")
 async def exibir_quantidade():
-    quantidade = await dlc_service.exibir_quantidade()
-    return {"quantidade": quantidade}
+    try:
+        quantidade = await dlc_service.exibir_quantidade()
+        return {"quantidade": quantidade}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/search")
 async def buscar_jogos(
@@ -48,12 +62,15 @@ async def buscar_jogos(
     orderBy: str = "titulo",
     orderDir: str = Query("asc", pattern="^(asc|desc)$")
 ):
-    return await dlc_service.buscar_dlcs(
-        titulo, descricao,
-        dia, mes, ano,
-        precoAcimaDe, precoAbaixoDe,
-        page, size, orderBy, orderDir
-    )
+    try:
+        return await dlc_service.buscar_dlcs(
+            titulo, descricao,
+            dia, mes, ano,
+            precoAcimaDe, precoAbaixoDe,
+            page, size, orderBy, orderDir
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/{dlc_id}")
 async def buscar_por_id(dlc_id: str):

@@ -1,6 +1,7 @@
 import asyncio
 from datetime import datetime, timedelta
 from motor.motor_asyncio import AsyncIOMotorClient
+import random
 
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
@@ -17,7 +18,7 @@ async def popular():
             "titulo": f"DLC {i}",
             "descricao": f"Descrição do Jogo {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),
-            "preco": int(round((50 + i * 1.5) * 100)),  # ← aqui!
+            "preco": int(round((random.randint(10, 100) + i * 1.5) * 100)),  # ← aqui!
             "jogo_id": f"{i}"
         })
 
