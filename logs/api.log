@@ -1,0 +1,37 @@
+2025-07-16 22:38:56,287 - ERROR - [ERRO] Falha ao criar jogo: Invalid document {'titulo': 'string', 'descricao': 'string', 'data_lancamento': datetime.date(2025, 7, 16), 'preco': 0.0, 'desenvolvedora': 'string', '_id': ObjectId('68782a003686d9b0575ce785')} | cannot encode object: datetime.date(2025, 7, 16), of type: <class 'datetime.date'>
+2025-07-16 22:57:14,660 - INFO - [SUCESSO] Jogo criado com ID 68782e4a246ce49402e5201b
+2025-07-16 22:57:14,660 - ERROR - [ERRO] Falha ao criar jogo: 1 validation error for JogoDB
+_id
+  Field required [type=missing, input_value={'titulo': 'string', 'des...782e4a246ce49402e5201b'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-16 23:01:39,511 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-16 23:01:39,511 - ERROR - [ERRO] Falha ao listar jogos: 1 validation error for JogoDB
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68782e4a246ce49402e5201b'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-16 23:01:55,724 - INFO - [SUCESSO] Jogo criado com ID 68782f63fba500d7be299d81
+2025-07-16 23:02:28,741 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-16 23:02:28,742 - ERROR - [ERRO] Falha ao listar jogos: 1 validation error for JogoDB
+_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68782e4a246ce49402e5201b'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-16 23:08:30,831 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-16 23:08:51,353 - INFO - [SUCESSO] Jogo deletado com ID 68782e4a246ce49402e5201b
+2025-07-16 23:08:54,781 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-16 23:10:00,873 - INFO - [SUCESSO] Jogo encontrado com ID 68782f63fba500d7be299d81
+2025-07-16 23:10:52,957 - INFO - [SUCESSO] Jogo atualizado com ID 68782f63fba500d7be299d81
+2025-07-16 23:10:56,412 - INFO - [SUCESSO] Jogo encontrado com ID 68782f63fba500d7be299d81
+2025-07-16 23:11:07,368 - INFO - [SUCESSO] Jogo atualizado com ID 68782f63fba500d7be299d81
+2025-07-16 23:11:12,835 - INFO - [SUCESSO] Jogo encontrado com ID 68782f63fba500d7be299d81
+2025-07-16 23:11:26,149 - INFO - [SUCESSO] Jogo atualizado com ID 68782f63fba500d7be299d81
+2025-07-16 23:11:30,127 - INFO - [SUCESSO] Jogo encontrado com ID 68782f63fba500d7be299d81
+2025-07-17 00:39:57,788 - ERROR - [ERRO] Erro ao buscar jogo search: 'search' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-17 00:50:07,149 - ERROR - [ERRO] Erro ao buscar jogo search: 'search' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-17 00:56:28,769 - ERROR - [ERRO] Falha ao filtrar jogos: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68784a11d77dd2809dbe7fa1, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-07-17 00:57:52,324 - ERROR - [ERRO] Falha ao filtrar jogos: name 'ASCENDING' is not defined
+2025-07-17 01:03:18,006 - INFO - [SUCESSO] Filtro de jogos retornou 1 item(ns)
+2025-07-17 01:09:49,460 - INFO - [SUCESSO] Listagem de 31 jogo(s)
+2025-07-17 01:20:04,591 - INFO - [SUCESSO] Listagem de 31 jogo(s)
+2025-07-17 01:20:24,852 - INFO - [SUCESSO] Listagem de 31 jogo(s)
+2025-07-17 01:20:45,426 - INFO - [SUCESSO] Jogo criado com ID 68784fedf83530f11d7925c7
+2025-07-17 01:20:55,133 - INFO - [SUCESSO] Listagem de 32 jogo(s)
