@@ -1,4 +1,5 @@
 from bson import ObjectId
+from bson.errors import InvalidId
 from db.database import dlc_collection
 from models.dlc import DLCCreate, DLCUpdate
 from utils.helper import convert_date_to_datetime
@@ -10,6 +11,9 @@ def parse_mongo_id(doc: dict) -> dict:
     return doc
 
 async def insert_dlc(data: DLCCreate) -> str:
+    if not ObjectId.is_valid(data.jogo_id):
+        raise InvalidId(f"{data.jogo_id}")
+    
     doc = data.dict()
     doc["data_lancamento"] = convert_date_to_datetime(doc["data_lancamento"])
     result = await dlc_collection.insert_one(doc)
@@ -20,10 +24,16 @@ async def get_all_dlcs() -> list[dict]:
     return [parse_mongo_id(doc) for doc in docs]
 
 async def get_dlc_by_id(dlc_id: str) -> dict | None:
+    if not ObjectId.is_valid(dlc_id):
+        raise InvalidId("ID de DLC inválido")
+    
     doc = await dlc_collection.find_one({"_id": ObjectId(dlc_id)})
     return parse_mongo_id(doc) if doc else None
 
 async def update_dlc(dlc_id: str, data: DLCUpdate) -> bool:
+    if not ObjectId.is_valid(dlc_id):
+        raise InvalidId("ID de DLC inválido")
+    
     update_data = {k: v for k, v in data.dict(exclude_unset=True).items()}
     if "data_lancamento" in update_data:
         update_data["data_lancamento"] = convert_date_to_datetime(update_data["data_lancamento"])
@@ -33,10 +43,16 @@ async def update_dlc(dlc_id: str, data: DLCUpdate) -> bool:
     return result.modified_count > 0
 
 async def get_dlc_by_jogo(jogo_id: str) -> dict | None:
+    if not ObjectId.is_valid(jogo_id):
+        raise InvalidId("ID de jogo inválido")
+
     doc = await dlc_collection.find_one({"jogo_id": jogo_id})
     return parse_mongo_id(doc) if doc else None
 
 async def delete_dlc(dlc_id: str) -> bool:
+    if not ObjectId.is_valid(dlc_id):
+        raise InvalidId("ID de DLC inválido")
+    
     result = await dlc_collection.delete_one({"_id": ObjectId(dlc_id)})
     return result.deleted_count > 0
 

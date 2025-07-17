@@ -21,6 +21,9 @@ async def criar_dlc(dlc: DLCCreate):
         id = await dlc_repository.insert_dlc(dlc)
         info_(f"[SUCESSO] DLC criada com id {id}")
         return DLCDB.from_mongo({**dlc.dict(), "_id": id})
+    except InvalidId:
+        error_(f"[ERRO] ID de jogo inválido")
+        raise ValueError("ID de jogo inválido")
     except Exception as e:
         error_(f"[ERRO] Falha ao criar DLC: {e}")
         raise
@@ -42,6 +45,9 @@ async def buscar_por_id(dlc_id: str):
             return DLCDB.from_mongo(docs)
         error_(f"[ERRO] DLC com id {dlc_id} nao encontrado")
         return None
+    except InvalidId:
+        error_(f"[ERRO] ID de DLC inválido")
+        raise ValueError("ID de DLC inválido")
     except Exception as e:
         error_(f"[ERRO] Erro ao buscar DLC {dlc_id}: {e}")
         raise
@@ -84,6 +90,9 @@ async def deletar_dlc(dlc_id: str):
         else:
             error_(f"[ERRO] DLC com id {dlc_id} nao encontrado para deletar")
         return sucesso
+    except InvalidId:
+        error_(f"[ERRO] ID de DLC inválido")
+        raise ValueError("ID de DLC inválido")
     except Exception as e:
         error_(f"[ERRO] Falha ao deletar DLC {dlc_id}: {e}")
         raise

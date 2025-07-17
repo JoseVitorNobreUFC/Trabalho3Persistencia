@@ -36,8 +36,8 @@ async def deletar_dlc(dlc_id: str):
         if not sucesso:
             raise HTTPException(status_code=404, detail="DLC nao encontrado")
         return {"message": "DLC deletado com sucesso"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 
 @router.get("/quantidade")
@@ -75,6 +75,9 @@ async def buscar_jogos(
 @router.get("/{dlc_id}")
 async def buscar_por_id(dlc_id: str):
     try:
-        return await dlc_service.buscar_por_id(dlc_id)
+        dlc = await dlc_service.buscar_por_id(dlc_id)
+        if not dlc:
+            raise HTTPException(status_code=404, detail="DLC nao encontrado")
+        return dlc
     except ValueError:
-        raise HTTPException(status_code=404, detail="DLC não encontrada")
+        raise HTTPException(status_code=404, detail="Formato de ID invalido")

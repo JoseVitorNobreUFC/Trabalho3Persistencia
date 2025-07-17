@@ -147,3 +147,29 @@ jogo_id
 2025-07-17 20:19:59,821 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
 2025-07-17 20:20:23,140 - INFO - [SUCESSO] Filtro de DLCs retornou 10 item(ns)
 2025-07-17 20:23:52,938 - INFO - [SUCESSO] Filtro de DLCs retornou 10 item(ns)
+2025-07-17 21:57:00,865 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-17 21:59:32,505 - INFO - [SUCESSO] Filtro de jogos retornou 10 item(ns)
+2025-07-17 21:59:44,980 - INFO - [SUCESSO] Filtro de jogos retornou 5 item(ns)
+2025-07-17 22:02:43,882 - INFO - [SUCESSO] Filtro de jogos retornou 5 item(ns)
+2025-07-17 22:03:41,693 - INFO - [SUCESSO] Filtro de DLCs retornou 10 item(ns)
+2025-07-17 22:04:14,393 - INFO - [SUCESSO] Filtro de DLCs retornou 3 item(ns)
+2025-07-17 22:04:39,893 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-17 22:04:39,893 - INFO - [SUCESSO] Quantidade de DLCs cadastrados: 30
+2025-07-17 22:04:58,173 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 22:05:06,917 - ERROR - [ERRO] Falha ao criar DLC: 'string' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-17 22:06:37,624 - ERROR - [ERRO] Erro ao buscar jogo as: 'as' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-17 22:24:54,679 - ERROR - [ERRO] ID de jogo inválido
+2025-07-17 22:26:17,947 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:27:48,053 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:30:44,311 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:32:47,505 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:32:57,862 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:33:12,023 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:33:17,756 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:33:57,327 - ERROR - [ERRO] ID ID de jogo inválido é inválido
+2025-07-17 22:34:03,967 - ERROR - [ERRO] ID de jogo inválido
+2025-07-17 22:34:11,508 - ERROR - [ERRO] ID inválido ao atualizar DLC: asda
+2025-07-17 22:34:18,203 - ERROR - [ERRO] ID de DLC inválido
+2025-07-17 22:34:40,991 - ERROR - [ERRO] ID de DLC inválido
+2025-07-17 22:34:46,819 - ERROR - [ERRO] ID de DLC inválido
+2025-07-17 22:35:25,924 - ERROR - [ERRO] ID de DLC inválido

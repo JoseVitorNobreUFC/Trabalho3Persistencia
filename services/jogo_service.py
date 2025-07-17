@@ -2,6 +2,7 @@ from models.jogo import JogoCreate, JogoDB, JogoUpdate
 from repository import jogo_repository
 from utils.logger import info_, error_
 from typing import Optional
+from bson.errors import InvalidId
 
 async def criar_jogo(jogo: JogoCreate) -> JogoDB:
     try:
@@ -12,6 +13,9 @@ async def criar_jogo(jogo: JogoCreate) -> JogoDB:
         id = await jogo_repository.insert_jogo(jogo)
         info_(f"[SUCESSO] Jogo criado com ID {id}")
         return JogoDB.from_mongo({**jogo.dict(), "_id":id})
+    except InvalidId as e:
+        error_(f"[ERRO] ID {str(e)} é inválido")
+        raise ValueError("ID de jogo inválido")
     except Exception as e:
         error_(f"[ERRO] Falha ao criar jogo: {str(e)}")
         raise
@@ -33,6 +37,9 @@ async def buscar_por_id(jogo_id: str) -> JogoDB | None:
             return JogoDB.from_mongo(doc)
         error_(f"[ERRO] Jogo com ID {jogo_id} não encontrado")
         return None
+    except InvalidId as e:
+        error_(f"[ERRO] ID {str(e)} é inválido")
+        raise ValueError("ID de jogo inválido")
     except Exception as e:
         error_(f"[ERRO] Erro ao buscar jogo {jogo_id}: {str(e)}")
         raise
@@ -54,6 +61,9 @@ async def atualizar_jogo(jogo_id: str, dados: JogoUpdate) -> bool:
         else:
             error_(f"[ERRO] Jogo com ID {jogo_id} nao encontrado para atualizar")
         return sucesso
+    except InvalidId as e:
+        error_(f"[ERRO] ID {str(e)} é inválido")
+        raise ValueError("ID de jogo inválido")
     except Exception as e:
         error_(f"[ERRO] Falha ao atualizar jogo {jogo_id}: {str(e)}")
         raise
@@ -66,6 +76,9 @@ async def deletar_jogo(jogo_id: str) -> bool:
         else:
             error_(f"[ERRO] Jogo com ID {jogo_id} não encontrado para deletar")
         return sucesso
+    except InvalidId as e:
+        error_(f"[ERRO] ID {str(e)} é inválido")
+        raise ValueError("ID de jogo inválido")
     except Exception as e:
         error_(f"[ERRO] Falha ao deletar jogo {jogo_id}: {str(e)}")
         raise

@@ -36,8 +36,8 @@ async def deletar_jogo(jogo_id: str):
         if not sucesso:
             raise HTTPException(status_code=404, detail="Jogo nao encontrado")
         return {"message": "Jogo deletado com sucesso"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @router.get("/quantidade")
 async def exibir_quantidade():
@@ -73,8 +73,11 @@ async def buscar_jogos(
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/{jogo_id}", response_model=JogoDB)
-async def obter_jogo(jogo_id: str):
-    jogo = await jogo_service.buscar_por_id(jogo_id)
-    if not jogo:
-        raise HTTPException(status_code=404, detail="Jogo não encontrado")
-    return jogo
+async def buscar_por_id(jogo_id: str):
+    try:
+        jogo = await jogo_service.buscar_por_id(jogo_id)
+        if not jogo:
+            raise HTTPException(status_code=404, detail="Jogo não encontrado")
+        return jogo
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))

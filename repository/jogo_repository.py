@@ -1,5 +1,6 @@
 from db.database import jogo_collection
 from bson import ObjectId
+from bson.errors import InvalidId
 from models.jogo import JogoCreate, JogoUpdate
 from utils.helper import convert_date_to_datetime
 from typing import Optional
@@ -21,6 +22,9 @@ async def get_all_jogos() -> list[dict]:
     return [parse_mongo_id(j) for j in jogos]
 
 async def get_jogo_by_id(jogo_id: str) -> dict | None:
+    if not ObjectId.is_valid(jogo_id):
+        raise InvalidId("ID de jogo inválido")
+
     doc = await jogo_collection.find_one({"_id": ObjectId(jogo_id)})
     return parse_mongo_id(doc) if doc else None
 
@@ -29,6 +33,9 @@ async def get_jogo_by_titulo(titulo: str) -> dict | None:
     return parse_mongo_id(doc) if doc else None
 
 async def update_jogo(jogo_id: str, dados: JogoUpdate) -> bool:
+    if not ObjectId.is_valid(jogo_id):
+        raise InvalidId("ID de jogo inválido")
+    
     update_data = {k: v for k, v in dados.dict(exclude_unset=True).items()}
     if "data_lancamento" in update_data:
         update_data["data_lancamento"] = convert_date_to_datetime(update_data["data_lancamento"])
@@ -36,6 +43,9 @@ async def update_jogo(jogo_id: str, dados: JogoUpdate) -> bool:
     return result.matched_count > 0
 
 async def delete_jogo(jogo_id: str) -> bool:
+    if not ObjectId.is_valid(jogo_id):
+        raise InvalidId("ID de jogo inválido")
+    
     result = await jogo_collection.delete_one({"_id": ObjectId(jogo_id)})
     return result.deleted_count > 0
 
