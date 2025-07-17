@@ -1,5 +1,6 @@
 from models.jogo import JogoCreate, JogoDB, JogoUpdate
 from repository import jogo_repository
+from repository.dlc_repository import get_dlc_by_jogo
 from utils.logger import info_, error_
 from typing import Optional
 from bson.errors import InvalidId
@@ -70,6 +71,9 @@ async def atualizar_jogo(jogo_id: str, dados: JogoUpdate) -> bool:
 
 async def deletar_jogo(jogo_id: str) -> bool:
     try:
+        if await get_dlc_by_jogo(jogo_id):
+            error_(f"[ERRO] Jogo com ID {jogo_id} possui DLC cadastrado")
+            raise ValueError("Jogo possui DLC cadastrado")
         sucesso = await jogo_repository.delete_jogo(jogo_id)
         if sucesso:
             info_(f"[SUCESSO] Jogo deletado com ID {jogo_id}")

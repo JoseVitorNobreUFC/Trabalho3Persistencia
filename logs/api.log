@@ -173,3 +173,26 @@ jogo_id
 2025-07-17 22:34:40,991 - ERROR - [ERRO] ID de DLC inválido
 2025-07-17 22:34:46,819 - ERROR - [ERRO] ID de DLC inválido
 2025-07-17 22:35:25,924 - ERROR - [ERRO] ID de DLC inválido
+2025-07-17 22:40:39,656 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 22:40:45,608 - INFO - [SUCESSO] Listagem de 0 DLC(s)
+2025-07-17 22:58:12,785 - INFO - [SUCESSO] Jogo criado com ID 68798004e7f9ba1187a7c248
+2025-07-17 22:58:21,724 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 22:59:20,912 - ERROR - [ERRO] ID de jogo inválido
+2025-07-17 22:59:25,810 - INFO - [SUCESSO] DLC criada com id 6879804de7f9ba1187a7c249
+2025-07-17 22:59:29,723 - ERROR - [ERRO] Jogo 68798004e7f9ba1187a7c248 já possui DLC.
+2025-07-17 22:59:29,723 - ERROR - [ERRO] Falha ao criar DLC: Esse jogo já possui uma DLC registrada.
+2025-07-17 22:59:42,132 - INFO - [SUCESSO] Jogo deletado com ID 68798004e7f9ba1187a7c248
+2025-07-17 22:59:45,768 - INFO - [SUCESSO] Listagem de 1 DLC(s)
+2025-07-17 23:01:50,514 - INFO - [SUCESSO] DLC deletado com id 6879804de7f9ba1187a7c249
+2025-07-17 23:01:53,717 - INFO - [SUCESSO] Listagem de 0 DLC(s)
+2025-07-17 23:01:57,784 - INFO - [SUCESSO] Jogo criado com ID 687980e58eac1f8c1b09d033
+2025-07-17 23:02:04,268 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 23:02:39,374 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 23:02:45,037 - ERROR - [ERRO] Jogo 68798004e7f9ba1187a7c248 não encontrado.
+2025-07-17 23:02:45,038 - ERROR - [ERRO] Falha ao criar DLC: O jogo informado não existe.
+2025-07-17 23:02:49,129 - INFO - [SUCESSO] DLC criada com id 687981198eac1f8c1b09d034
+2025-07-17 23:02:56,914 - INFO - [SUCESSO] Listagem de 1 DLC(s)
+2025-07-17 23:03:08,291 - ERROR - [ERRO] Jogo com ID 687980e58eac1f8c1b09d033 possui DLC cadastrado
+2025-07-17 23:03:08,291 - ERROR - [ERRO] Falha ao deletar jogo 687980e58eac1f8c1b09d033: Jogo possui DLC cadastrado
+2025-07-17 23:03:17,120 - INFO - [SUCESSO] DLC deletado com id 687981198eac1f8c1b09d034
+2025-07-17 23:03:21,136 - INFO - [SUCESSO] Jogo deletado com ID 687980e58eac1f8c1b09d033
