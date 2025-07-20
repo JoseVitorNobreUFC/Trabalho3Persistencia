@@ -18,7 +18,7 @@ async def popular():
     jogos = []
     for i in range(1, 31):
         jogos.append({
-            "_id": f"{get_game_id(i-1)}",
+            "id": f"{get_game_id(i-1)}",
             "titulo": f"Jogo {i}",
             "descricao": f"Descrição do Jogo {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),

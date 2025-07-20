@@ -18,7 +18,7 @@ async def popular():
     dlcs = []
     for i in range(1, 31):
         dlcs.append({
-            "_id": f"{generate_id()}",
+            "id": f"{generate_id()}",
             "titulo": f"DLC {i}",
             "descricao": f"Descrição da DLC {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),
