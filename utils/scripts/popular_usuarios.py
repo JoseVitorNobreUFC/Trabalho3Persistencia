@@ -2,6 +2,10 @@ import asyncio
 from datetime import datetime, timedelta
 from motor.motor_asyncio import AsyncIOMotorClient
 import random
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+from utils.helper import generate_id
 
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
@@ -60,7 +64,7 @@ async def popular():
     usuarios = []
     for i in range(1, 31):
         usuarios.append({
-            "_id": i,
+            "_id": f"{generate_id()}",
             "nome": f"{usuarios_names[i - 1]}",
             "email": f"{usuarios_names[i - 1].lower()}@email.com",
             "senha": f"{usuarios_names[i - 1]}123@",
