@@ -2,14 +2,9 @@ from db.database import jogo_collection
 from bson import ObjectId
 from bson.errors import InvalidId
 from models.jogo import JogoCreate, JogoUpdate
-from utils.helper import convert_date_to_datetime
+from utils.helper import convert_date_to_datetime, parse_mongo_id
 from typing import Optional
 from pymongo import ASCENDING, DESCENDING
-
-# Função para converter _id de ObjectId para str
-def parse_mongo_id(doc: dict) -> dict:
-    doc["_id"] = str(doc["_id"])
-    return doc
 
 async def insert_jogo(jogo: JogoCreate) -> str:
     data = jogo.dict()

@@ -196,3 +196,84 @@ jogo_id
 2025-07-17 23:03:08,291 - ERROR - [ERRO] Falha ao deletar jogo 687980e58eac1f8c1b09d033: Jogo possui DLC cadastrado
 2025-07-17 23:03:17,120 - INFO - [SUCESSO] DLC deletado com id 687981198eac1f8c1b09d034
 2025-07-17 23:03:21,136 - INFO - [SUCESSO] Jogo deletado com ID 687980e58eac1f8c1b09d033
+2025-07-17 23:09:44,698 - INFO - [SUCESSO] Listagem de 0 jogo(s)
+2025-07-17 23:09:49,923 - INFO - [SUCESSO] Jogo criado com ID 687982bd8eac1f8c1b09d035
+2025-07-17 23:09:54,516 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 23:09:54,516 - ERROR - [ERRO] Falha ao criar jogo: Jogo string ja cadastrado
+2025-07-17 23:09:57,773 - INFO - [SUCESSO] Jogo criado com ID 687982c58eac1f8c1b09d036
+2025-07-17 23:10:01,447 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-17 23:10:12,909 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 23:10:12,909 - ERROR - [ERRO] Falha ao atualizar jogo 687982c58eac1f8c1b09d036: Jogo string ja cadastrado
+2025-07-17 23:10:29,282 - INFO - [SUCESSO] Jogo atualizado com ID 687982c58eac1f8c1b09d036
+2025-07-17 23:10:35,099 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-17 23:10:49,555 - INFO - [SUCESSO] Jogo deletado com ID 687982bd8eac1f8c1b09d035
+2025-07-17 23:11:28,854 - INFO - [SUCESSO] Jogo atualizado com ID 687982c58eac1f8c1b09d036
+2025-07-17 23:11:32,102 - INFO - [SUCESSO] Listagem de 1 jogo(s)
+2025-07-17 23:12:01,375 - INFO - [SUCESSO] Jogo encontrado com ID 687982c58eac1f8c1b09d036
+2025-07-17 23:12:33,471 - INFO - [SUCESSO] Jogo criado com ID 687983618eac1f8c1b09d037
+2025-07-17 23:12:37,941 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-17 23:13:11,989 - ERROR - [ERRO] Jogo string ja cadastrado
+2025-07-17 23:13:11,989 - ERROR - [ERRO] Falha ao atualizar jogo 687983618eac1f8c1b09d037: Jogo string ja cadastrado
+2025-07-17 23:13:24,056 - INFO - [SUCESSO] Jogo atualizado com ID 687983618eac1f8c1b09d037
+2025-07-17 23:13:28,505 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-17 23:13:41,993 - INFO - [SUCESSO] Jogo encontrado com ID 687982c58eac1f8c1b09d036
+2025-07-17 23:13:55,265 - INFO - [SUCESSO] Jogo encontrado com ID 687983618eac1f8c1b09d037
+2025-07-17 23:14:07,742 - INFO - [SUCESSO] Listagem de 2 jogo(s)
+2025-07-17 23:14:07,742 - INFO - [SUCESSO] Quantidade de jogos cadastrados: 2
+2025-07-17 23:14:14,987 - INFO - [SUCESSO] Listagem de 0 DLC(s)
+2025-07-17 23:14:21,289 - ERROR - [ERRO] Jogo 687980e58eac1f8c1b09d033 não encontrado.
+2025-07-17 23:14:21,289 - ERROR - [ERRO] Falha ao criar DLC: O jogo informado não existe.
+2025-07-17 23:14:25,557 - INFO - [SUCESSO] DLC criada com id 687983d18eac1f8c1b09d038
+2025-07-17 23:14:28,069 - ERROR - [ERRO] Jogo 687983618eac1f8c1b09d037 já possui DLC.
+2025-07-17 23:14:28,069 - ERROR - [ERRO] Falha ao criar DLC: Esse jogo já possui uma DLC registrada.
+2025-07-18 00:13:40,803 - INFO - [SUCESSO] Listagem de 0 usuário(s)
+2025-07-18 00:15:11,907 - ERROR - [ERRO] Falha ao criar usuário: 'data_cadastro'
+2025-07-20 00:59:49,513 - INFO - [SUCESSO] Listagem de 0 usuário(s)
+2025-07-20 00:59:56,500 - INFO - [SUCESSO] Usuário criado com ID 687c3f8cc4c9c60bbfdf18ac
+2025-07-20 01:54:58,021 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-20 01:54:58,021 - ERROR - Erro ao criar usuário: Usuário com email user@example.com ja cadastrado
+2025-07-20 01:55:05,619 - ERROR - Erro ao listar usuários: module 'repository.usuario_repository' has no attribute 'get_usuarios'
+2025-07-20 01:56:25,418 - INFO - Listagem de 1 usuário(s)
+2025-07-20 01:56:41,782 - INFO - Usuário deletado com ID 687c3f8cc4c9c60bbfdf18ac
+2025-07-20 01:56:51,823 - INFO - Usuário criado com ID 687c4ce32297c5aa6423a06a
+2025-07-20 01:57:19,987 - INFO - Usuário criado com ID 687c4cff2297c5aa6423a06b
+2025-07-20 01:57:28,194 - INFO - Listagem de 2 usuário(s)
+2025-07-20 01:57:55,255 - ERROR - ID ID de usuário inválido é inválido
+2025-07-20 01:58:40,699 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-20 01:59:00,675 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-20 01:59:59,069 - INFO - Listagem de 2 usuário(s)
+2025-07-20 02:00:08,858 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-20 02:00:17,076 - INFO - Usuário deletado com ID 687c4cff2297c5aa6423a06b
+2025-07-20 02:00:30,178 - INFO - Usuário criado com ID 687c4dbe2297c5aa6423a06c
+2025-07-20 02:01:04,823 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-20 02:03:49,219 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-20 02:03:49,219 - ERROR - Erro ao atualizar usuário 687c4dbe2297c5aa6423a06c: name 'dados' is not defined
+2025-07-20 02:04:05,504 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-20 02:04:05,504 - ERROR - Erro ao atualizar usuário 687c4dbe2297c5aa6423a06c: Jogo user@example.com ja cadastrado
+2025-07-20 02:14:56,033 - INFO - Listagem de 32 usuário(s)
+2025-07-20 02:14:56,040 - ERROR - Erro ao listar usuários: 1 validation error for UsuarioDB
+senha
+  Field required [type=missing, input_value={'_id': '1', 'nome': 'Usu...ta', 'familia_id': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-20 02:15:32,122 - INFO - Listagem de 32 usuário(s)
+2025-07-20 02:15:32,123 - ERROR - Erro ao listar usuários: 1 validation error for UsuarioDB
+senha
+  Field required [type=missing, input_value={'_id': '1', 'nome': 'Usu...ta', 'familia_id': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-20 02:15:48,058 - INFO - Listagem de 32 usuário(s)
+2025-07-20 02:15:48,058 - ERROR - Erro ao listar usuários: 1 validation error for UsuarioDB
+senha
+  Field required [type=missing, input_value={'_id': '1', 'nome': 'Usu...ta', 'familia_id': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-20 02:16:26,985 - INFO - Listagem de 0 usuário(s)
+2025-07-20 02:16:33,296 - INFO - Usuário criado com ID 687c5181883b21a4a3f17609
+2025-07-20 02:16:36,940 - INFO - Listagem de 1 usuário(s)
+2025-07-20 02:21:31,242 - INFO - Listagem de 31 usuário(s)
+2025-07-20 02:22:11,626 - INFO - Listagem de 31 usuário(s)
+2025-07-20 02:22:11,628 - INFO - [SUCESSO] Quantidade de usuários cadastrados: 31
+2025-07-20 02:25:06,175 - ERROR - [ERRO] Falha ao filtrar usuários: skip must be an integer, not <class 'str'>
+2025-07-20 02:26:16,942 - ERROR - [ERRO] Falha ao filtrar usuários: list indices must be integers or slices, not str
+2025-07-20 02:27:16,501 - ERROR - [ERRO] Falha ao filtrar usuários: list indices must be integers or slices, not str
+2025-07-20 02:30:13,939 - INFO - [SUCESSO] Filtro de usuários retornou 10 item(ns)
+2025-07-20 02:30:56,727 - INFO - [SUCESSO] Filtro de usuários retornou 10 item(ns)
+2025-07-20 02:30:58,187 - INFO - [SUCESSO] Filtro de usuários retornou 10 item(ns)

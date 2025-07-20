@@ -47,7 +47,7 @@ async def exibir_quantidade():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/search")
+@router.get("/buscar")
 async def buscar_jogos(
     titulo: Optional[str] = None,
     descricao: Optional[str] = None,

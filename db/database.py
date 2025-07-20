@@ -11,3 +11,4 @@ db = client[DB_NAME]
 
 jogo_collection = db["jogos"]
 dlc_collection = db["dlcs"]
+usuario_collection = db["usuarios"]

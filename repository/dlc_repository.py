@@ -2,13 +2,9 @@ from bson import ObjectId
 from bson.errors import InvalidId
 from db.database import dlc_collection
 from models.dlc import DLCCreate, DLCUpdate
-from utils.helper import convert_date_to_datetime
+from utils.helper import convert_date_to_datetime, parse_mongo_id
 from typing import Optional
 from pymongo import ASCENDING, DESCENDING
-
-def parse_mongo_id(doc: dict) -> dict:
-    doc["_id"] = str(doc["_id"])
-    return doc
 
 async def insert_dlc(data: DLCCreate) -> str:
     if not ObjectId.is_valid(data.jogo_id):

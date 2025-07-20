@@ -16,9 +16,9 @@ async def popular():
         dlcs.append({
             "_id": i,
             "titulo": f"DLC {i}",
-            "descricao": f"Descrição do Jogo {i}",
+            "descricao": f"Descrição da DLC {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),
-            "preco": int(round((random.randint(10, 100) + i * 1.5) * 100)),  # ← aqui!
+            "preco": int(round((random.randint(10, 100) + i * 1.5) * 100)),
             "jogo_id": f"{i}"
         })
 

@@ -18,7 +18,7 @@ async def popular():
             "titulo": f"Jogo {i}",
             "descricao": f"Descrição do Jogo {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),
-            "preco": int(round((random.randint(10, 100) + i * 1.5) * 100)),  # ← aqui!
+            "preco": int(round((random.randint(10, 100) + i * 1.5) * 100)),
             "desenvolvedora": f"Estúdio {i % 5 + 1}"
         })
 
