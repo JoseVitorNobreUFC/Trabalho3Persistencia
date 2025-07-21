@@ -70,7 +70,7 @@ async def popular():
             "senha": f"{usuarios_names[i - 1]}123@",
             "data_cadastro": datetime(2024, 1, 1) + timedelta(days=i),
             "pais": paises_names[random.randint(0, 9)], 
-            "familia_id": None
+            "familia_id": ""
         })
 
     result = await collection.insert_many(usuarios)

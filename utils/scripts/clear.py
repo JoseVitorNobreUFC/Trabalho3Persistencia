@@ -16,6 +16,11 @@ async def limpar_banco():
     
     usuario_collection = db["usuarios"]
     await usuario_collection.delete_many({})
+    
+    familia_collection = db["familias"]
+    await familia_collection.delete_many({})
+    
+    print("Banco de dados limpo com sucesso!")
   
 if __name__ == "__main__":
     asyncio.run(limpar_banco())

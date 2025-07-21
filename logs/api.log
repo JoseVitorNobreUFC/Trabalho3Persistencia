@@ -284,3 +284,127 @@ senha
 2025-07-20 02:52:51,325 - INFO - Listagem de 30 usuário(s)
 2025-07-20 02:54:14,783 - INFO - [SUCESSO] Listagem de 30 DLC(s)
 2025-07-20 02:54:37,160 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-20 02:55:19,605 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-20 02:55:25,425 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-20 02:55:46,267 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-20 02:55:57,364 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 possui DLC cadastrado
+2025-07-20 02:55:57,365 - ERROR - [ERRO] Falha ao deletar jogo 68784fedf83530f11d7925c7: Jogo possui DLC cadastrado
+2025-07-20 02:56:10,036 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-20 02:56:19,984 - ERROR - [ERRO] DLC com id 687c5a4f08d1c6fe6feebd63 nao encontrado
+2025-07-20 02:56:28,918 - ERROR - [ERRO] DLC com id 687c5a4f08d1c6fe6feebd63 nao encontrado para deletar
+2025-07-20 02:56:59,996 - INFO - Listagem de 30 usuário(s)
+2025-07-20 02:57:06,899 - ERROR - Usuário com ID 687c5a3db1ed9c2b49fd13f3 nao encontrado
+2025-07-20 02:58:46,134 - INFO - Listagem de 30 usuário(s)
+2025-07-20 02:58:55,804 - INFO - Usuário encontrado com ID 687c5b5eed8745496a4ac3ef
+2025-07-21 00:08:02,821 - INFO - Listagem de 30 usuário(s)
+2025-07-21 00:08:15,167 - INFO - Listagem de 30 usuário(s)
+2025-07-21 00:08:15,170 - INFO - [SUCESSO] Quantidade de usuários cadastrados: 30
+2025-07-21 00:08:28,096 - INFO - Usuário encontrado com ID 687c5b5eed8745496a4ac3ef
+2025-07-21 00:08:37,489 - ERROR - [ERRO] Falha ao criar família: 'dict' object has no attribute 'dict'
+2025-07-21 00:17:19,576 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:17:26,837 - INFO - Listagem de 30 usuário(s)
+2025-07-21 00:17:54,452 - INFO - Usuário encontrado com ID 687c5b5eed8745496a4ac3ef
+2025-07-21 00:18:16,953 - INFO - [SUCESSO] Família deletada com ID 687d850519a928425d0b2c16
+2025-07-21 00:18:24,561 - INFO - [SUCESSO] Família criada com ID 687d875076c1adffd2d4590a e vinculada ao usuário 687c5b5eed8745496a4ac3ef
+2025-07-21 00:18:28,947 - INFO - Usuário encontrado com ID 687c5b5eed8745496a4ac3ef
+2025-07-21 00:19:04,161 - INFO - [SUCESSO] Família criada com ID 687d877876c1adffd2d4590b e vinculada ao usuário 687c5b5eed8745496a4ac3f0
+2025-07-21 00:19:08,962 - INFO - [SUCESSO] Listagem de 2 família(s)
+2025-07-21 00:21:59,665 - INFO - [SUCESSO] Família atualizada com ID 687d875076c1adffd2d4590a
+2025-07-21 00:22:04,250 - INFO - [SUCESSO] Listagem de 2 família(s)
+2025-07-21 00:22:14,776 - INFO - [SUCESSO] Listagem de 2 família(s)
+2025-07-21 00:23:09,073 - INFO - [SUCESSO] Família deletada com ID 687d875076c1adffd2d4590a
+2025-07-21 00:23:12,243 - INFO - Usuário encontrado com ID 687c5b5eed8745496a4ac3ef
+2025-07-21 00:23:17,976 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:23:22,371 - INFO - Usuário encontrado com ID 687c5b5eed8745496a4ac3ef
+2025-07-21 00:23:36,029 - ERROR - [ERRO] Família com ID 687d875076c1adffd2d4590a não encontrada
+2025-07-21 00:33:15,083 - INFO - Listagem de 30 usuário(s)
+2025-07-21 00:33:22,876 - ERROR - Usuário com ID 687c5b5eed8745496a4ac3ef nao encontrado
+2025-07-21 00:33:25,925 - INFO - Usuário encontrado com ID 687d8ab3296e90c863a0ae4c
+2025-07-21 00:33:31,546 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:34:24,107 - INFO - Listagem de 30 usuário(s)
+2025-07-21 00:34:28,705 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 00:34:39,881 - INFO - [SUCESSO] Família criada com ID 687d8b1f2e8d056951c71e2c e vinculada ao usuário 687d8afa907d0f9a94bb80db
+2025-07-21 00:34:44,519 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:35:03,250 - INFO - [SUCESSO] Família deletada com ID 687d8b1f2e8d056951c71e2c
+2025-07-21 00:35:14,376 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:35:16,023 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:35:25,421 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 00:35:38,911 - INFO - [SUCESSO] Família criada com ID 687d8b5a2e8d056951c71e2d e vinculada ao usuário 687d8afa907d0f9a94bb80db
+2025-07-21 00:35:44,765 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:35:53,549 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:38:09,960 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:38:18,559 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:38:24,961 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:38:40,208 - INFO - [SUCESSO] Família deletada com ID 687d8b5a2e8d056951c71e2d
+2025-07-21 00:38:44,389 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 00:38:54,846 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:38:59,102 - INFO - Listagem de 30 usuário(s)
+2025-07-21 00:40:55,324 - INFO - Usuário criado com ID 687d8c97235b6ab28fe11457
+2025-07-21 00:41:03,777 - INFO - [SUCESSO] Família criada com ID 687d8c9f235b6ab28fe11458 e vinculada ao usuário 687d8afa907d0f9a94bb80db
+2025-07-21 00:41:18,466 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:41:49,699 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:41:58,503 - ERROR - [ERRO] Falha ao exibir membros da família 687d8c9f235b6ab28fe11458: module 'repository.familia_repository' has no attribute 'get_usuarios_by_familia_id'
+2025-07-21 00:42:32,587 - INFO - [SUCESSO] Listagem de membros da família com ID 687d8c9f235b6ab28fe11458
+2025-07-21 00:44:06,965 - INFO - [SUCESSO] Listagem de membros da família com ID 687d8c9f235b6ab28fe11458
+2025-07-21 00:45:15,659 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:45:33,396 - INFO - [SUCESSO] Família deletada com ID 687d8c9f235b6ab28fe11458
+2025-07-21 00:45:49,364 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:45:58,106 - INFO - Listagem de 31 usuário(s)
+2025-07-21 00:49:22,853 - ERROR - Usuário com email user@example.com ja cadastrado
+2025-07-21 00:49:22,854 - ERROR - Erro ao criar usuário: Usuário com email user@example.com ja cadastrado
+2025-07-21 00:49:28,788 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:49:31,829 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 00:49:37,641 - ERROR - [ERRO] ID inválido: ID de usuário inválido
+2025-07-21 00:50:11,413 - ERROR - [ERRO] ID inválido: ID de usuário inválido
+2025-07-21 00:50:16,139 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:50:21,711 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 00:51:01,854 - INFO - [SUCESSO] Família criada com ID 687d8ef559ccf8714b27f70e e vinculada ao usuário 687d8afa907d0f9a94bb80db
+2025-07-21 00:51:09,972 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 00:51:18,829 - INFO - [SUCESSO] Listagem de membros da família com ID 687d8ef559ccf8714b27f70e
+2025-07-21 00:51:34,541 - INFO - [SUCESSO] Família deletada com ID 687d8ef559ccf8714b27f70e
+2025-07-21 00:51:39,826 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 00:51:42,684 - INFO - Usuário encontrado com ID 687d8afa907d0f9a94bb80db
+2025-07-21 00:58:31,508 - INFO - Usuário criado com ID 687d90b79be674d6a5420c8f
+2025-07-21 00:58:37,003 - INFO - Listagem de 1 usuário(s)
+2025-07-21 00:58:56,923 - INFO - Listagem de 1 usuário(s)
+2025-07-21 00:59:13,155 - ERROR - Erro ao atualizar usuário 687d90b79be674d6a5420c8f: 'data_nascimento'
+2025-07-21 01:01:10,255 - INFO - Usuário atualizado com ID 687d90b79be674d6a5420c8f
+2025-07-21 01:01:13,105 - INFO - Listagem de 1 usuário(s)
+2025-07-21 01:09:47,770 - INFO - Listagem de 30 usuário(s)
+2025-07-21 01:09:56,713 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 01:10:47,019 - INFO - [SUCESSO] Família criada com ID 687d93979ae7a75975302f7e e vinculada ao usuário 687d930e6baa65407ad4953c
+2025-07-21 01:10:50,725 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 01:10:57,725 - INFO - Usuário encontrado com ID 687d930e6baa65407ad4953c
+2025-07-21 01:11:14,931 - INFO - [SUCESSO] Listagem de membros da família com ID 687d930e6baa65407ad4953c
+2025-07-21 01:11:47,373 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 01:11:47,373 - INFO - [SUCESSO] Quantidade de famílias cadastradas: 1
+2025-07-21 01:11:56,930 - INFO - [SUCESSO] Família deletada com ID 687d93979ae7a75975302f7e
+2025-07-21 01:12:01,353 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 01:23:55,959 - INFO - [SUCESSO] Listagem de 0 família(s)
+2025-07-21 01:24:04,412 - INFO - Listagem de 30 usuário(s)
+2025-07-21 01:24:11,374 - INFO - Usuário encontrado com ID 687d930e6baa65407ad4953c
+2025-07-21 01:24:19,668 - INFO - [SUCESSO] Família criada com ID 687d96c31f503d6b783e9a78 e vinculada ao usuário 687d930e6baa65407ad4953c
+2025-07-21 01:24:24,560 - INFO - [SUCESSO] Listagem de 1 família(s)
+2025-07-21 01:24:29,379 - INFO - Usuário encontrado com ID 687d930e6baa65407ad4953c
+2025-07-21 01:25:23,975 - INFO - [SUCESSO] Usuário 687d930e6baa65407ad4953d adicionado à família 687d96c31f503d6b783e9a78
+2025-07-21 01:26:42,725 - ERROR - [ERRO] Falha ao adicionar usuário 687d930e6baa65407ad4953d à família 687d96c31f503d6b783e9a78
+2025-07-21 01:26:54,016 - INFO - Listagem de 30 usuário(s)
+2025-07-21 01:29:20,432 - ERROR - [ERRO] ID inválido: ID de usuário inválido
+2025-07-21 01:29:51,483 - ERROR - [ERRO] ID fornecido é inválido: ID de usuário inválido
+2025-07-21 01:30:08,682 - ERROR - [ERRO] ID fornecido é inválido: ID de usuário inválido
+2025-07-21 01:30:14,938 - ERROR - [ERRO] ID fornecido é inválido: ID de usuário inválido
+2025-07-21 01:30:41,263 - ERROR - [ERRO] Família com ID 687d96c31f503d6b783e9a7a não encontrada
+2025-07-21 01:30:41,263 - ERROR - [ERRO] Erro ao adicionar usuário à família: Família não encontrada
+2025-07-21 01:31:16,067 - ERROR - [ERRO] Família com ID 687d96c31f503d6b783e9a7a não encontrada
+2025-07-21 01:31:16,067 - ERROR - [ERRO] Erro ao adicionar usuário à família: Família não encontrada
+2025-07-21 01:31:20,920 - INFO - [SUCESSO] Usuário 687d930e6baa65407ad4953e adicionado à família 687d96c31f503d6b783e9a78
+2025-07-21 01:31:24,229 - ERROR - [ERRO] Falha ao adicionar usuário 687d930e6baa65407ad4953e à família 687d96c31f503d6b783e9a78
+2025-07-21 01:31:24,229 - ERROR - [ERRO] Erro ao adicionar usuário à família: Esse usuario já está nessa familia
+2025-07-21 01:31:28,425 - ERROR - [ERRO] Falha ao adicionar usuário 687d930e6baa65407ad4953a à família 687d96c31f503d6b783e9a78
+2025-07-21 01:31:28,425 - ERROR - [ERRO] Erro ao adicionar usuário à família: Esse usuario já está nessa familia
+2025-07-21 01:32:57,947 - ERROR - [ERRO] Erro ao adicionar usuário à família: Esse usuario não existe
+2025-07-21 01:33:06,068 - ERROR - [ERRO] Falha ao adicionar usuário 687d930e6baa65407ad4953e à família 687d96c31f503d6b783e9a78
+2025-07-21 01:33:06,068 - ERROR - [ERRO] Erro ao adicionar usuário à família: Esse usuario já está nessa familia
+2025-07-21 01:33:17,792 - INFO - Listagem de 30 usuário(s)
+2025-07-21 01:33:25,673 - INFO - [SUCESSO] Família deletada com ID 687d96c31f503d6b783e9a78
+2025-07-21 01:33:32,103 - INFO - Listagem de 30 usuário(s)

@@ -18,11 +18,10 @@ class UsuarioUpdate(BaseModel):
     senha: Optional[str] = None
     data_cadastro: Optional[date] = None
     pais: Optional[str] = None
-    familia_id: Optional[str] = None
 
 class UsuarioDB(UsuarioBase):
     id: str = Field(..., alias="_id")
-    familia_id: Optional[str] = None
+    familia_id: Optional[str] = ""
 
     @classmethod
     def from_mongo(cls, doc: dict):

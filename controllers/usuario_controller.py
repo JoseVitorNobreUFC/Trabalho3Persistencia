@@ -77,3 +77,23 @@ async def buscar_por_id(usuario_id: str):
     return usuario
   except ValueError as e:
     raise HTTPException(status_code=400, detail=str(e))
+  
+@router.patch("/{usuario_id}/adicionarNaFamilia/{familia_id}")
+async def adicionar_usuario_em_familia(usuario_id: str, familia_id: str):
+    try:
+        sucesso = await usuario_service.adicionar_usuario_em_familia(usuario_id, familia_id)
+        if not sucesso:
+            raise HTTPException(status_code=404, detail="Usuário não encontrado")
+        return {"message": f"Usuário adicionado à família com sucesso"}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@router.patch("/{usuario_id}/removerDaFamilia")
+async def remover_usuario_da_familia(usuario_id: str):
+    try:
+        sucesso = await usuario_service.remover_usuario_da_familia(usuario_id)
+        if not sucesso:
+            raise HTTPException(status_code=404, detail="Usuário não encontrado")
+        return {"message": f"Usuário removido da família com sucesso"}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))

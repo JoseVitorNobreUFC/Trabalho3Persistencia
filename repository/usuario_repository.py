@@ -30,13 +30,13 @@ async def update_usuario(usuario_id: str, data: UsuarioUpdate) -> bool:
     
     update_data = {k: v for k, v in data.dict(exclude_unset=True).items()}
     if "data_cadastro" in update_data:
-        update_data["data_cadastro"] = convert_date_to_datetime(update_data["data_nascimento"])
+        update_data["data_cadastro"] = convert_date_to_datetime(update_data["data_cadastro"])
     result = await usuario_collection.update_one({"_id": ObjectId(usuario_id)}, {"$set": update_data})
     return result.matched_count > 0
 
 async def delete_usuario(usuario_id: str) -> bool:
     if not ObjectId.is_valid(usuario_id):
-        raise InvalidId("ID de usuário inv-lndo")
+        raise InvalidId("ID de usuário inválido")
     
     result = await usuario_collection.delete_one({"_id": ObjectId(usuario_id)})
     return result.deleted_count > 0
@@ -44,6 +44,10 @@ async def delete_usuario(usuario_id: str) -> bool:
 async def get_usuario_by_email(email: str) -> dict | None:
     doc = await usuario_collection.find_one({"email": email})
     return parse_mongo_id(doc) if doc else None
+
+async def get_usuarios_by_familia_id(familia_id: str) -> list[dict]:
+    docs = await usuario_collection.find({"familia_id": familia_id}).to_list(length=100)
+    return [parse_mongo_id(doc) for doc in docs]
 
 async def buscar_usuarios(
     nome: Optional[str],
@@ -98,3 +102,28 @@ async def buscar_usuarios(
         "orderDir": order_dir,
         "content": documentos
     }
+    
+async def adicionar_usuario_em_familia(usuario_id: str, familia_id: str) -> bool:
+    if not ObjectId.is_valid(usuario_id):
+        raise InvalidId("ID de usuário inválido")
+    if not ObjectId.is_valid(familia_id):
+        raise InvalidId("ID de família inválido")
+    
+    if await get_usuario_by_id(usuario_id) is None:
+        raise ValueError("Esse usuario não existe")
+    
+    result = await usuario_collection.update_one(
+        {"_id": ObjectId(usuario_id)},
+        {"$set": {"familia_id": familia_id}}
+    )
+    return result.modified_count > 0
+
+async def remover_usuario_da_familia(usuario_id: str) -> bool:
+    if not ObjectId.is_valid(usuario_id):
+        raise InvalidId("ID de usuário inválido")
+    
+    result = await usuario_collection.update_one(
+        {"_id": ObjectId(usuario_id)},
+        {"$unset": {"familia_id": ""}}
+    )
+    return result.modified_count > 0

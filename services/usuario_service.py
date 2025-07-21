@@ -1,5 +1,5 @@
 from models.usuario import UsuarioDB, UsuarioCreate, UsuarioUpdate
-from repository import usuario_repository
+from repository import usuario_repository, familia_repository
 from utils.logger import info_, error_
 from bson.errors import InvalidId
 from typing import Optional
@@ -113,3 +113,39 @@ async def exibir_quantidade():
   except Exception as e:
     error_(f"[ERRO] Falha ao exibir quantidade de usuários: {str(e)}")
     raise
+  
+async def adicionar_usuario_em_familia(usuario_id: str, familia_id: str) -> bool:
+    try:
+        familia = await familia_repository.get_familia_by_id(familia_id)
+        if not familia:
+            error_(f"[ERRO] Família com ID {familia_id} não encontrada")
+            raise ValueError("Família não encontrada")
+
+        sucesso = await usuario_repository.adicionar_usuario_em_familia(usuario_id, familia_id)
+        if sucesso:
+            info_(f"[SUCESSO] Usuário {usuario_id} adicionado à família {familia_id}")
+        else:
+            error_(f"[ERRO] Falha ao adicionar usuário {usuario_id} à família {familia_id}")
+            raise ValueError("Esse usuario já está nessa familia")
+        return sucesso
+    except InvalidId as e:
+        error_(f"[ERRO] ID fornecido é inválido: {e}")
+        raise ValueError(f"{e}")
+    except Exception as e:
+        error_(f"[ERRO] Erro ao adicionar usuário à família: {e}")
+        raise
+
+async def remover_usuario_da_familia(usuario_id: str) -> bool:
+    try:
+        sucesso = await usuario_repository.remover_usuario_da_familia(usuario_id)
+        if sucesso:
+            info_(f"[SUCESSO] Usuário {usuario_id} removido da família")
+        else:
+            error_(f"[ERRO] Usuário {usuario_id} não encontrado para remoção de família")
+        return sucesso
+    except InvalidId as e:
+        error_(f"[ERRO] ID inválido: {e}")
+        raise ValueError("ID inválido")
+    except Exception as e:
+        error_(f"[ERRO] Erro ao remover usuário da família: {e}")
+        raise
