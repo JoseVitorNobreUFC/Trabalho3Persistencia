@@ -1,5 +1,6 @@
 from models.usuario import UsuarioDB, UsuarioCreate, UsuarioUpdate
 from repository import usuario_repository, familia_repository
+from services import familia_service
 from utils.logger import info_, error_
 from bson.errors import InvalidId
 from typing import Optional
@@ -68,11 +69,14 @@ async def atualizar_usuario(usuario_id: str, data: UsuarioUpdate) -> bool:
     error_(f"Erro ao atualizar usuário {usuario_id}: {e}")
     raise
   
-async def deletar_usuario(usuario_id: str) -> bool: # Futuramente adicionar checagem para familia se for o dono dela
+async def deletar_usuario(usuario_id: str) -> bool:
   try:
     sucesso = await usuario_repository.delete_usuario(usuario_id)
     if sucesso:
       info_(f"Usuário deletado com ID {usuario_id}")
+      familia = await familia_repository.get_familia_by_criador_id(usuario_id)
+      if familia:
+        await familia_service.deletar_familia(familia["_id"])
     else:
       error_(f"Usuário com ID {usuario_id} nao encontrado")
     return sucesso

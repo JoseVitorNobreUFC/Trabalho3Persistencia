@@ -41,6 +41,13 @@ async def delete_familia(familia_id: str) -> bool:
     result = await familia_collection.delete_one({"_id": ObjectId(familia_id)})
     return result.deleted_count > 0
 
+async def get_familia_by_criador_id(creator_id: str) -> dict | None:
+    if not ObjectId.is_valid(creator_id):
+        raise InvalidId("ID de família inválido")
+    
+    doc = await familia_collection.find_one({"criador_id": creator_id})
+    return parse_mongo_id(doc) if doc else None
+
 async def buscar_familias(
     nome: Optional[str],
     descricao: Optional[str],
@@ -86,10 +93,9 @@ async def buscar_familias(
     documentos = [parse_mongo_id(doc) for doc in await cursor.to_list(length=size)]
     
     return {
-        "total": total,
-        "page": page,
         "size": size,
-        "orderBy": order_by,
-        "orderDir": order_dir,
+        "page": page,
+        "totalElements": total,
+        "totalPages": (total + size - 1) // size,
         "content": documentos
     }

@@ -95,11 +95,10 @@ async def buscar_usuarios(
     documentos = [parse_mongo_id(doc) for doc in await cursor.to_list(length=size)]
     
     return {
-        "total": total,
-        "page": page,
         "size": size,
-        "orderBy": order_by,
-        "orderDir": order_dir,
+        "page": page,
+        "totalElements": total,
+        "totalPages": (total + size - 1) // size,
         "content": documentos
     }
     
