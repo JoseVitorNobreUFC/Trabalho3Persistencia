@@ -408,3 +408,67 @@ senha
 2025-07-21 01:33:17,792 - INFO - Listagem de 30 usuário(s)
 2025-07-21 01:33:25,673 - INFO - [SUCESSO] Família deletada com ID 687d96c31f503d6b783e9a78
 2025-07-21 01:33:32,103 - INFO - Listagem de 30 usuário(s)
+2025-07-21 01:52:57,817 - INFO - [SUCESSO] Listagem de 8 família(s)
+2025-07-21 01:53:10,291 - INFO - Listagem de 30 usuário(s)
+2025-07-21 01:54:16,791 - INFO - Listagem de 0 usuário(s)
+2025-07-21 01:54:25,144 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:00:35,299 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:03:07,394 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:04:48,595 - ERROR - Usuário com ID 687d9f367d19253f7c5392a0 nao encontrado
+2025-07-21 02:06:27,535 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-21 02:06:34,152 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:08:45,649 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:08:49,009 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-21 02:10:04,426 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:10:07,842 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-21 02:10:59,305 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:12:32,530 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:13:07,706 - INFO - [SUCESSO] Jogo encontrado com ID 68784fedf83530f11d7925c7
+2025-07-21 02:13:23,648 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:13:25,877 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:15:49,288 - INFO - [SUCESSO] Jogo encontrado com ID 68784fedf83530f11d7925c7
+2025-07-21 02:16:18,736 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:16:28,606 - ERROR - [ERRO] Jogo com ID 687da2e45a5615edffef3aa0 não encontrado
+2025-07-21 02:17:33,959 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:17:33,959 - ERROR - [ERRO] Falha ao listar DLCs: 1 validation error for DLCDB
+jogo_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68784fedf83530f11d7925c7'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-21 02:20:19,854 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:20:28,121 - ERROR - [ERRO] Jogo com ID 687da3e0d716c882a5c34b65 não encontrado
+2025-07-21 02:22:19,259 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:22:27,529 - ERROR - [ERRO] Jogo com ID 687da4568f7c6ddb106ca803 não encontrado
+2025-07-21 02:24:54,057 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:25:00,280 - ERROR - [ERRO] Jogo com ID 687da4ef46525337f166a74e não encontrado
+2025-07-21 02:25:04,364 - ERROR - [ERRO] Jogo com ID 687da4ef46525337f166a74e não encontrado
+2025-07-21 02:25:35,689 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:25:35,689 - ERROR - [ERRO] Falha ao listar DLCs: 1 validation error for DLCDB
+jogo_id
+  Input should be a valid string [type=string_type, input_value=ObjectId('68784fedf83530f11d7925c7'), input_type=ObjectId]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-21 02:29:30,940 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:29:41,599 - INFO - [SUCESSO] Jogo encontrado com ID 68784fedf83530f11d7925c7
+2025-07-21 02:31:12,179 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:31:28,628 - INFO - [SUCESSO] Listagem de 8 família(s)
+2025-07-21 02:32:00,087 - INFO - Usuário encontrado com ID 687d9f367d19253f7c53928d
+2025-07-21 02:34:07,527 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:36:43,396 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:37:10,753 - INFO - [SUCESSO] Listagem de 8 família(s)
+2025-07-21 02:37:19,181 - INFO - Usuário encontrado com ID 687d9f367d19253f7c53928d
+2025-07-21 02:37:59,390 - INFO - Usuário encontrado com ID 687d9f367d19253f7c53928d
+2025-07-21 02:38:05,475 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:42:39,345 - INFO - Listagem de 30 usuário(s)
+2025-07-21 02:42:48,633 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:42:58,059 - ERROR - [ERRO] Jogo com ID 687da91631447aa0ef60cafb não encontrado
+2025-07-21 02:43:48,364 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-21 02:44:26,277 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:44:42,117 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:44:53,671 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:44:57,954 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-21 02:45:44,642 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-21 02:45:58,789 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-21 02:46:09,506 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d7925c7 não encontrado
+2025-07-21 02:46:52,746 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-21 02:46:57,033 - INFO - [SUCESSO] Jogo encontrado com ID 68784fedf83530f11d7925c7
+2025-07-21 02:47:47,824 - INFO - [SUCESSO] Listagem de 8 família(s)
+2025-07-21 02:47:55,902 - INFO - [SUCESSO] Listagem de membros da família com ID 687d9fd634988e8641806a68

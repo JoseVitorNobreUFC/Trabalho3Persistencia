@@ -5,7 +5,7 @@ import random
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
-from utils.helper import get_game_id, generate_id
+from utils.helper import get_game_id, generate_id, create_id
 
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
@@ -18,7 +18,7 @@ async def popular():
     dlcs = []
     for i in range(1, 31):
         dlcs.append({
-            "id": f"{generate_id()}",
+            "_id": generate_id(),
             "titulo": f"DLC {i}",
             "descricao": f"Descrição da DLC {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),
@@ -27,7 +27,7 @@ async def popular():
         })
 
     result = await collection.insert_many(dlcs)
-    print(f"{len(result.inserted_ids)} dlcs inseridos.")
+    print(f"{len(result.inserted_ids)} dlcs inseridas.")
 
 if __name__ == "__main__":
     asyncio.run(popular())

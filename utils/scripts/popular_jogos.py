@@ -5,7 +5,7 @@ import random
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
-from utils.helper import get_game_id
+from utils.helper import get_game_id, create_id
 
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
@@ -18,7 +18,7 @@ async def popular():
     jogos = []
     for i in range(1, 31):
         jogos.append({
-            "id": f"{get_game_id(i-1)}",
+            "_id": create_id(get_game_id(i-1)),
             "titulo": f"Jogo {i}",
             "descricao": f"Descrição do Jogo {i}",
             "data_lancamento": datetime(2024, 1, 1) + timedelta(days=i),

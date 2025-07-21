@@ -5,7 +5,7 @@ import random
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
-from utils.helper import generate_id
+from utils.helper import get_user_id, create_id
 
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
@@ -64,7 +64,7 @@ async def popular():
     usuarios = []
     for i in range(1, 31):
         usuarios.append({
-            "id": f"{generate_id()}",
+            "_id": create_id(get_user_id(i-1)),
             "nome": f"{usuarios_names[i - 1]}",
             "email": f"{usuarios_names[i - 1].lower()}@email.com",
             "senha": f"{usuarios_names[i - 1]}123@",
