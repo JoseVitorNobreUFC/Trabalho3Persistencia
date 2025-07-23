@@ -1,52 +1,121 @@
-from bson import ObjectId
+from models.compra import CompraCreate, CompraDB, CompraUpdate
+from repository import compra_repository, jogo_repository, dlc_repository
 from bson.errors import InvalidId
-from db.database import compra_collection
-from models.compra import CompraCreate, CompraUpdate
-from utils.helper import convert_date_to_datetime, parse_mongo_id
+from utils.logger import info_, error_
 from typing import Optional
-from pymongo import ASCENDING, DESCENDING
 
-async def insert_compra(data: CompraCreate) -> str:
-    if not ObjectId.is_valid(data.usuario_id):
-        raise InvalidId("ID de usuário inválido")
-    if not ObjectId.is_valid(data.item_id):
-        raise InvalidId("ID de jogo/DLC inválido")
-    
-    doc = data.dict()
-    doc["data_compra"] = convert_date_to_datetime(doc["data_compra"])
-    result = await compra_collection.insert_one(doc)
-    return str(result.inserted_id)
 
-async def get_all_compras() -> list[dict]:
-    docs = await compra_collection.find().to_list(100)
-    return [parse_mongo_id(doc) for doc in docs]
+async def criar_compra(data: CompraCreate) -> CompraDB:
+    try:
+        preco_maximo = None
+        
+        if await compra_repository.get_by_usuario_and_item_id(data.usuario_id, data.item_id):
+            error_(f"[ERRO] Compra entre o usuário {data.usuario_id} e o item {data.item_id} já existe.")
+            raise ValueError("A compra desse produto já foi feita.")
 
-async def get_compra_by_id(compra_id: str) -> dict | None:
-    if not ObjectId.is_valid(compra_id):
-        raise InvalidId("ID de compra inválido")
+        # Verifica se é um jogo ou uma DLC
+        jogo = await jogo_repository.get_jogo_by_id(data.item_id)
+        if jogo:
+            preco_maximo = jogo["preco"]
+        else:
+            dlc = await dlc_repository.get_dlc_by_id(data.item_id)
+            if dlc:
+                preco_maximo = dlc["preco"]
 
-    doc = await compra_collection.find_one({"_id": ObjectId(compra_id)})
-    return parse_mongo_id(doc) if doc else None
+        if preco_maximo is None:
+            error_(f"[ERRO] Item com ID {data.item_id} não encontrado como jogo ou DLC.")
+            raise ValueError("Item não encontrado inválido.")
 
-async def update_compra(compra_id: str, data: CompraUpdate) -> bool:
-    if not ObjectId.is_valid(compra_id):
-        raise InvalidId("ID de compra inválido")
+        if data.preco_pago * 100 > preco_maximo:
+            error_(f"[ERRO] Preço pago {data.preco_pago} é maior que o valor real {preco_maximo / 100:.2f}")
+            raise ValueError("Preço pago não pode ser maior que o preço original do item.")
 
-    update_data = {k: v for k, v in data.dict(exclude_unset=True).items()}
-    if "data_compra" in update_data:
-        update_data["data_compra"] = convert_date_to_datetime(update_data["data_compra"])
+        id = await compra_repository.insert_compra(data)
+        info_(f"[SUCESSO] Compra criada com ID {id}")
+        return CompraDB.from_mongo({**data.dict(), "_id": id})
+    except InvalidId as e:
+        error_(f"[ERRO] ID inválido: {e}")
+        raise ValueError("Formato de ID utilizado é inválido.")
+    except Exception as e:
+        error_(f"[ERRO] Falha ao criar compra: {e}")
+        raise
 
-    result = await compra_collection.update_one(
-        {"_id": ObjectId(compra_id)}, {"$set": update_data}
-    )
-    return result.modified_count > 0
+async def listar_compras() -> list[CompraDB]:
+    try:
+        docs = await compra_repository.get_all_compras()
+        info_(f"[SUCESSO] Listagem de {len(docs)} compra(s).")
+        return [CompraDB.from_mongo(d) for d in docs]
+    except Exception as e:
+        error_(f"[ERRO] Falha ao listar compras: {e}")
+        raise
 
-async def delete_compra(compra_id: str) -> bool:
-    if not ObjectId.is_valid(compra_id):
-        raise InvalidId("ID de compra inválido")
+async def buscar_por_id(compra_id: str) -> Optional[CompraDB]:
+    try:
+        doc = await compra_repository.get_compra_by_id(compra_id)
+        if doc:
+            info_(f"[SUCESSO] Compra encontrada com ID {compra_id}")
+            return CompraDB.from_mongo(doc)
+        error_(f"[ERRO] Compra com ID {compra_id} não encontrada.")
+        return None
+    except InvalidId as e:
+        error_(f"[ERRO] ID inválido: {e}")
+        raise ValueError("ID inválido.")
+    except Exception as e:
+        error_(f"[ERRO] Erro ao buscar compra {compra_id}: {e}")
+        raise
 
-    result = await compra_collection.delete_one({"_id": ObjectId(compra_id)})
-    return result.deleted_count > 0
+async def atualizar_compra(compra_id: str, data: CompraUpdate) -> bool:
+    try:
+        compra_existente = await compra_repository.get_compra_by_id(compra_id)
+        if not compra_existente:
+            error_(f"[ERRO] Compra com ID {compra_id} não encontrada.")
+            raise ValueError("Compra não encontrada.")
+        
+        preco_maximo = None
+
+        jogo = await jogo_repository.get_jogo_by_id(compra_existente["item_id"])
+        if jogo:
+            preco_maximo = jogo["preco"]
+        else:
+            dlc = await dlc_repository.get_dlc_by_id(compra_existente["item_id"])
+            if dlc:
+                preco_maximo = dlc["preco"]
+
+        if preco_maximo is None:
+            error_(f"[ERRO] Item com ID {compra_existente["item_id"]} não encontrado como jogo ou DLC.")
+            raise ValueError("Item não encontrado inválido.")
+
+        if data.preco_pago * 100 > preco_maximo:
+            error_(f"[ERRO] Preço pago {data.preco_pago} é maior que o valor real {preco_maximo / 100:.2f}")
+            raise ValueError("Preço pago não pode ser maior que o preço original do item.")
+        
+        sucesso = await compra_repository.update_compra(compra_id, data)
+        if sucesso:
+            info_(f"[SUCESSO] Compra atualizada com ID {compra_id}")
+        else:
+            error_(f"[ERRO] Falha ao atualizar compra com ID {compra_id}")
+        return sucesso
+    except InvalidId as e:
+        error_(f"[ERRO] ID inválido: {e}")
+        raise ValueError(f"{e}")
+    except Exception as e:
+        error_(f"[ERRO] Erro ao atualizar compra {compra_id}: {e}")
+        raise
+
+async def deletar_compra(compra_id: str) -> bool:
+    try:
+        sucesso = await compra_repository.delete_compra(compra_id)
+        if sucesso:
+            info_(f"[SUCESSO] Compra deletada com ID {compra_id}")
+        else:
+            error_(f"[ERRO] Compra com ID {compra_id} não encontrada.")
+        return sucesso
+    except InvalidId as e:
+        error_(f"[ERRO] ID inválido: {e}")
+        raise ValueError(f"{e}")
+    except Exception as e:
+        error_(f"[ERRO] Falha ao deletar compra {compra_id}: {e}")
+        raise
 
 async def buscar_compras(
     forma_pagamento: Optional[str],
@@ -57,47 +126,28 @@ async def buscar_compras(
     preco_max: Optional[float],
     page: int,
     size: int,
-    order_by: str = "data_compra",
+    order_by: str = "data",
     order_dir: str = "asc"
-) -> dict:
-    filtro = {}
-
-    if forma_pagamento:
-        filtro["forma_pagamento"] = forma_pagamento
-
-    if dia or mes or ano:
-        filtro["$expr"] = {
-            "$and": [
-                {"$eq": [{"$dayOfMonth": "$data_compra"}, dia]} if dia else {},
-                {"$eq": [{"$month": "$data_compra"}, mes]} if mes else {},
-                {"$eq": [{"$year": "$data_compra"}, ano]} if ano else {},
-            ]
+):
+    try:
+        resultado = await compra_repository.buscar_compras(
+            forma_pagamento, dia, mes, ano,
+            preco_min, preco_max, page, size, order_by, order_dir
+        )
+        info_(f"[SUCESSO] Filtro de compras retornou {len(resultado['content'])} item(ns)")
+        return {
+            **resultado,
+            "content": [CompraDB.from_mongo(d) for d in resultado["content"]]
         }
+    except Exception as e:
+        error_(f"[ERRO] Falha ao buscar compras: {e}")
+        raise
 
-    if preco_min is not None or preco_max is not None:
-        filtro["preco_pago"] = {}
-        if preco_min is not None:
-            filtro["preco_pago"]["$gte"] = int(preco_min * 100)
-        if preco_max is not None:
-            filtro["preco_pago"]["$lte"] = int(preco_max * 100)
-
-    total = await compra_collection.count_documents(filtro)
-    ordenacao = ASCENDING if order_dir.lower() == "asc" else DESCENDING
-
-    cursor = (
-        compra_collection
-        .find(filtro)
-        .sort(order_by, ordenacao)
-        .skip((page - 1) * size)
-        .limit(size)
-    )
-    
-    documentos = [parse_mongo_id(doc) for doc in await cursor.to_list(length=size)]
-
-    return {
-        "size": size,
-        "page": page,
-        "totalElements": total,
-        "totalPages": (total + size - 1) // size,
-        "content": documentos
-    }
+async def exibir_quantidade():
+    try:
+        quantidade = len(await listar_compras())
+        info_(f"[SUCESSO] Quantidade de compras cadastradas: {quantidade}")
+        return quantidade
+    except Exception as e:
+        error_(f"[ERRO] Falha ao exibir quantidade de compras: {str(e)}")
+        raise

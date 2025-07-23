@@ -474,3 +474,66 @@ jogo_id
 2025-07-21 02:47:55,902 - INFO - [SUCESSO] Listagem de membros da família com ID 687d9fd634988e8641806a68
 2025-07-23 02:37:22,042 - ERROR - [ERRO] ID inválido: ID de usuário inválido
 2025-07-23 02:38:12,347 - ERROR - [ERRO] ID inválido: ID de usuário inválido
+2025-07-23 02:47:52,206 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 02:48:19,564 - INFO - [SUCESSO] Avaliação criada com ID 68804d733bfbb580e993e6d2
+2025-07-23 02:48:28,183 - INFO - [SUCESSO] Listagem de 2 avaliação(ões)
+2025-07-23 02:48:28,184 - INFO - [SUCESSO] Quantidade de avaliações cadastradas: 2
+2025-07-23 02:48:32,706 - INFO - [SUCESSO] Listagem de 2 avaliação(ões)
+2025-07-23 02:48:48,142 - INFO - [SUCESSO] Avaliação 68801bb72036a09834f6fdff deletada.
+2025-07-23 02:48:53,360 - INFO - [SUCESSO] Listagem de 1 avaliação(ões)
+2025-07-23 02:49:21,734 - ERROR - [ERRO] ID inválido: ID de item inválido
+2025-07-23 02:54:08,025 - ERROR - [ERRO] ID inválido: ID de item inválido
+2025-07-23 02:54:10,392 - ERROR - [ERRO] ID inválido: ID de item inválido
+2025-07-23 02:54:27,856 - INFO - [SUCESSO] Avaliação 68804d733bfbb580e993e6d2 atualizada.
+2025-07-23 02:54:48,228 - ERROR - [ERRO] DLC com id 68784fedf83530f11d792521 nao encontrado
+2025-07-23 02:54:56,205 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d792521 não encontrado
+2025-07-23 02:58:08,030 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d792521 não encontrado
+2025-07-23 02:58:16,105 - ERROR - [ERRO] Avaliação 68804d733bfbb580e993e6d2 não encontrada.
+2025-07-23 02:58:25,940 - INFO - [SUCESSO] Listagem de 1 avaliação(ões)
+2025-07-23 02:58:33,582 - ERROR - [ERRO] Avaliação 68804d733bfbb580e993e6d2 não encontrada.
+2025-07-23 02:59:55,109 - ERROR - [ERRO] Avaliação 68804d733bfbb580e993e6d2 não encontrada.
+2025-07-23 02:59:59,534 - ERROR - [ERRO] Avaliação 68804d733bfbb580e993e6d2 não encontrada.
+2025-07-23 03:01:25,286 - ERROR - [ERRO] Avaliação 68804d733bfbb580e993e6d2 não encontrada.
+2025-07-23 03:02:02,697 - ERROR - [ERRO] Avaliação 68804d733bfbb580e993e6d2 não encontrada.
+2025-07-23 03:02:16,562 - ERROR - [ERRO] Avaliação 68804d733bfbb580e993e6d2 não encontrada.
+2025-07-23 03:05:33,375 - ERROR - [ERRO] Nenhum item encontrado com ID 68784fedf83530f11d792521
+2025-07-23 03:05:33,375 - ERROR - [ERRO] Erro ao atualizar avaliação: Item (jogo ou DLC) não encontrado.
+2025-07-23 15:41:41,110 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-23 15:41:56,916 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d7925c7 recuperadas
+2025-07-23 15:42:06,784 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 15:42:22,716 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d7925c7 recuperadas
+2025-07-23 15:45:28,535 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d7925d8 recuperadas
+2025-07-23 15:46:58,421 - INFO - [SUCESSO] Listagem de 1 avaliação(ões)
+2025-07-23 15:47:06,321 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d792521 recuperadas
+2025-07-23 15:54:57,890 - INFO - [SUCESSO] Listagem de 8 família(s)
+2025-07-23 15:55:10,684 - ERROR - [ERRO] Falha ao calcular valor total da família 687d9fd634988e8641806a68: module 'repository.query_complexas_repository' has no attribute 'valor_total_familia'
+2025-07-23 15:55:19,143 - ERROR - [ERRO] Falha ao obter resumo da família 687d9fd634988e8641806a68: module 'repository.query_complexas_repository' has no attribute 'resumo_familia'
+2025-07-23 15:55:31,444 - INFO - Listagem de 30 usuário(s)
+2025-07-23 15:55:41,873 - ERROR - [ERRO] Falha ao obter perfil do usuário 687d9f367d19253f7c53928d: module 'repository.query_complexas_repository' has no attribute 'perfil_usuario'
+2025-07-23 15:55:48,323 - INFO - [SUCESSO] Reviews do jogo 687d9f367d19253f7c53928d recuperadas
+2025-07-23 15:58:04,361 - INFO - [SUCESSO] Perfil do usuário 687d9f367d19253f7c53928d recuperado
+2025-07-23 15:59:55,210 - INFO - [SUCESSO] Valor total da família 687d9fd634988e8641806a68 recuperado
+2025-07-23 15:59:58,568 - INFO - [SUCESSO] Resumo da família 687d9fd634988e8641806a68 obtido
+2025-07-23 16:01:59,983 - INFO - [SUCESSO] Reviews do jogo 687d9f367d19253f7c53928d recuperadas
+2025-07-23 16:02:20,809 - ERROR - [ERRO] Jogo com ID 687d9f367d19253f7c53928d não encontrado
+2025-07-23 16:02:29,618 - ERROR - [ERRO] DLC com id 687d9f367d19253f7c53928d nao encontrado
+2025-07-23 16:02:41,459 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 16:02:53,765 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d7925c7 recuperadas
+2025-07-23 16:03:46,678 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 16:03:54,470 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d7925d8 recuperadas
+2025-07-23 16:15:03,431 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 16:15:13,244 - ERROR - [ERRO] Falha ao buscar reviews do jogo 68784fedf83530f11d7925c7: '_asyncio.Future' object is not subscriptable
+2025-07-23 16:15:55,647 - ERROR - [ERRO] Falha ao buscar reviews do jogo 68784fedf83530f11d7925c7: '_asyncio.Future' object is not subscriptable
+2025-07-23 16:17:43,070 - ERROR - [ERRO] Falha ao buscar reviews do jogo 68784fedf83530f11d7925c7: There is no current event loop in thread 'AnyIO worker thread'.
+2025-07-23 16:19:06,064 - ERROR - [ERRO] Falha ao buscar reviews do jogo 68784fedf83530f11d7925c7: '_asyncio.Future' object is not subscriptable
+2025-07-23 16:20:21,186 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d7925c7 recuperadas
+2025-07-23 16:50:27,863 - ERROR - [ERRO] Falha ao buscar reviews do jogo 68784fedf83530f11d7925c7: '_asyncio.Future' object is not subscriptable
+2025-07-23 16:57:35,997 - INFO - [SUCESSO] Reviews do jogo 68784fedf83530f11d7925c7 recuperadas
+2025-07-23 17:04:49,425 - INFO - Listagem de 30 usuário(s)
+2025-07-23 17:05:04,689 - INFO - [SUCESSO] Perfil do usuário 687d9f367d19253f7c53928d recuperado
+2025-07-23 17:07:16,858 - INFO - [SUCESSO] Perfil do usuário 687d9f367d19253f7c53928d recuperado
+2025-07-23 17:07:21,421 - INFO - [SUCESSO] Perfil do usuário 687d9f367d19253f7c53928d recuperado
+2025-07-23 17:08:39,228 - INFO - [SUCESSO] Perfil do usuário 687d9f367d19253f7c53928d recuperado
+2025-07-23 17:08:50,664 - INFO - [SUCESSO] Listagem de 1 avaliação(ões)
+2025-07-23 17:09:29,531 - ERROR - [ERRO] DLC com id 68784fedf83530f11d792521 nao encontrado
+2025-07-23 17:09:36,837 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d792521 não encontrado
