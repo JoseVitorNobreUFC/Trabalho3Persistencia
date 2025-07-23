@@ -25,5 +25,5 @@ async def limpar_banco():
     
     print("Banco de dados limpo com sucesso!")
   
-if _name_ == "_main_":
+if __name__ == "__main__":
     asyncio.run(limpar_banco())

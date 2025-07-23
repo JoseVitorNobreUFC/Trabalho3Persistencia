@@ -5,7 +5,7 @@ import random
 import sys
 import os
 from bson import ObjectId
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(_file_), "../..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from utils.id_factory import generate_id, get_user_id, get_family_id, create_id
 
 MONGO_URI = "mongodb://localhost:27017"

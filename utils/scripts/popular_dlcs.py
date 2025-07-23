@@ -4,7 +4,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import random
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(_file_), "../..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from utils.id_factory import get_game_id, generate_id, create_id, get_dlc_id
 
 MONGO_URI = "mongodb://localhost:27017"

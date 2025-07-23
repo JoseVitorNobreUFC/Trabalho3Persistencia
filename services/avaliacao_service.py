@@ -19,7 +19,7 @@ async def criar_avaliacao(data: AvaliacaoCreate) -> AvaliacaoDB:
         return AvaliacaoDB.from_mongo({**data.dict(), "_id": id})
     except InvalidId as e:
         error_(f"[ERRO] ID inválido: {str(e)}")
-        raise ValueError("ID inválido")
+        raise ValueError(f"{str(e)}")
     except Exception as e:
         error_(f"[ERRO] Erro ao criar avaliação: {str(e)}")
         raise

@@ -472,3 +472,5 @@ jogo_id
 2025-07-21 02:46:57,033 - INFO - [SUCESSO] Jogo encontrado com ID 68784fedf83530f11d7925c7
 2025-07-21 02:47:47,824 - INFO - [SUCESSO] Listagem de 8 família(s)
 2025-07-21 02:47:55,902 - INFO - [SUCESSO] Listagem de membros da família com ID 687d9fd634988e8641806a68
+2025-07-23 02:37:22,042 - ERROR - [ERRO] ID inválido: ID de usuário inválido
+2025-07-23 02:38:12,347 - ERROR - [ERRO] ID inválido: ID de usuário inválido
