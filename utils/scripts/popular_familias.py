@@ -11,6 +11,28 @@ from utils.id_factory import generate_id, get_user_id, get_family_id, create_id
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
 
+familia_nomes = [
+    "CSGO Team",
+    "Indie Lovers",
+    "Triple A Force",
+    "The Last Stand",
+    "Nintendo Haters",
+    "Single Player Enjoyers",
+    "Multiplayer Lovers",
+    "Horror Lovers"
+]
+
+descricoes = [
+    "Somos ruins",
+    "Amamos jogos a baixo de 40 reais",
+    "Odiamos jogos a baixo de 40 reais",
+    "",
+    "Nintendo tem que piratear mesmo",
+    "Pra que jogar online",
+    "Se for pra ver historia eu vejo um livro ou filme",
+    "Hideo Kojima é um genio"
+]
+
 async def popular():
     client = AsyncIOMotorClient(MONGO_URI)
     db = client[DB_NAME]
@@ -21,8 +43,8 @@ async def popular():
     for i in range(1, 9):
         familias.append({
             "_id": create_id(get_family_id(i-1)),
-            "nome": f"Familia {i}",
-            "descricao": f"Descrição da Familia {i}",
+            "nome": f"{familia_nomes[i-1]}",
+            "descricao": f"{descricoes[i-1]}",
             "data_criacao": datetime(2024, 1, 1) + timedelta(days=i),
             "is_public": False if i > 6 else True,
             "criador_id": f"{get_user_id(i-1)}"
