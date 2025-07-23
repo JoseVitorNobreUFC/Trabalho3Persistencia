@@ -12,15 +12,6 @@ async def obter_dados_item(jogo_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/familia/{familia_id}/resumo")
-async def obter_resumo_familia(familia_id: str):
-    try:
-        return await query_complexas_service.obter_resumo_familia(familia_id)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
 @router.get("/usuario/{usuario_id}/perfil")
 async def obter_perfil_usuario(usuario_id: str):
     try:

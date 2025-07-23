@@ -13,34 +13,66 @@ DB_NAME = "jogosdb"
 
 formas_de_pagamento: list[FormaPagamento] = [FormaPagamento.CARTAO, FormaPagamento.BOLETO, FormaPagamento.PIX]
 
+comentario = [
+    "Esse jogo é muito bom",
+    "Achei mais divertido do que eu esperava",
+    "Recomendo",
+    "Achei mais ou menos",
+    "Nao recomendo",
+    "Nao gostei",
+    "Um dos jogos já feitos",
+    "Essa DLC não vale esse preço"
+]
+
 async def popular():
     client = AsyncIOMotorClient(MONGO_URI)
     db = client[DB_NAME]
     collection = db["compras"]
+    collection = db["avaliacoes"]
 
     compras = []
+    avaliacoes = []
     for i in range(0, 30):
       for j in range(0, 3):
+        item_id = f"{get_game_id(random.randint(0, 29))}",
         compras.append({
             "_id": generate_id(),
             "usuario_id": f"{get_user_id(i)}",
-            "item_id": f"{get_game_id(random.randint(0, 29))}",
+            "item_id": item_id,
             "data_compra": datetime(2024, 1, 1) + timedelta(days=i),
             "preco_pago": int(round((random.randint(5, 30) + i * 1.5) * 100)),
             "forma_pagamento": formas_de_pagamento[random.randint(0, 2)]
         })
+        avaliacoes.append({
+            "_id": generate_id(),
+            "usuario_id": f"{get_user_id(i)}",
+            "item_id": item_id,
+            "nota": random.randint(1, 10),
+            "comentario": f"{comentario[random.randint(0, 7)]}"
+        })
       for j in range(0, 3):
+        item_id = f"{get_dlc_id(random.randint(0, 29))}"
         compras.append({
             "_id": generate_id(),
             "usuario_id": f"{get_user_id(i)}",
-            "item_id": f"{get_dlc_id(random.randint(0, 29))}",
+            "item_id": item_id,
             "data_compra": datetime(2024, 1, 1) + timedelta(days=i),
             "preco_pago": int(round((random.randint(5, 30) + i * 1.5) * 100)),
             "forma_pagamento": formas_de_pagamento[random.randint(0, 2)]
+        })
+        avaliacoes.append({
+            "_id": generate_id(),
+            "usuario_id": f"{get_user_id(i)}",
+            "item_id": item_id,
+            "nota": random.randint(1, 10),
+            "comentario": f"Comentario {i}"
         })
 
     result = await collection.insert_many(compras)
     print(f"{len(result.inserted_ids)} compras inseridas.")
+
+    result = await collection.insert_many(avaliacoes)
+    print(f"{len(result.inserted_ids)} avaliacoes inseridas.")
 
 if __name__ == "__main__":
     asyncio.run(popular())

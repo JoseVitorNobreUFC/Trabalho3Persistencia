@@ -14,18 +14,6 @@ async def obter_dados_item(jogo_id: str):
         error_(f"[ERRO] Falha ao buscar reviews do jogo {jogo_id}: {e}")
         raise
 
-async def obter_resumo_familia(familia_id: str):
-    try:
-        resultado = await query_complexas_repository.obter_resumo_familia(familia_id)
-        info_(f"[SUCESSO] Resumo da família {familia_id} obtido")
-        return resultado
-    except InvalidId as e:
-        error_(f"[ERRO] ID inválido: {e}")
-        raise ValueError("ID inválido")
-    except Exception as e:
-        error_(f"[ERRO] Falha ao obter resumo da família {familia_id}: {e}")
-        raise
-
 async def obter_perfil_usuario(usuario_id: str):
     try:
         resultado = await query_complexas_repository.obter_perfil_usuario(usuario_id)

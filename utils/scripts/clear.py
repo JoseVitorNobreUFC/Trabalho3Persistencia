@@ -23,6 +23,9 @@ async def limpar_banco():
     compra_collection = db["compras"]
     await compra_collection.delete_many({})
     
+    avaliacao_collection = db["avaliacoes"]
+    await avaliacao_collection.delete_many({})
+    
     print("Banco de dados limpo com sucesso!")
   
 if __name__ == "__main__":
