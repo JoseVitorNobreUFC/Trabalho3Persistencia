@@ -5,8 +5,8 @@ import random
 import sys
 import os
 from bson import ObjectId
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
-from utils.helper import generate_id, get_user_id, get_family_id, create_id
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(_file_), "../..")))
+from utils.id_factory import generate_id, get_user_id, get_family_id, create_id
 
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
@@ -35,5 +35,5 @@ async def popular():
     result = await collection_familia.insert_many(familias)
     print(f"{len(result.inserted_ids)} familias inseridas.")
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     asyncio.run(popular())

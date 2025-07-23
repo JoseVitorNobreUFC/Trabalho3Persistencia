@@ -4,8 +4,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import random
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
-from utils.helper import get_game_id, create_id
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(_file_), "../..")))
+from utils.id_factory import get_game_id, create_id
 
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "jogosdb"
@@ -29,5 +29,5 @@ async def popular():
     result = await collection.insert_many(jogos)
     print(f"{len(result.inserted_ids)} jogos inseridos.")
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     asyncio.run(popular())
