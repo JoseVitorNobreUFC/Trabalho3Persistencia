@@ -10,7 +10,7 @@ async def insert_compra(data: CompraCreate) -> str:
     if not ObjectId.is_valid(data.usuario_id):
         raise InvalidId("ID de usuário inválido")
     if not ObjectId.is_valid(data.item_id):
-        raise InvalidId("ID de jogo/DLC inválido")
+        raise InvalidId("ID de item inválido")
     
     doc = data.dict()
     doc["data_compra"] = convert_date_to_datetime(doc["data_compra"])
@@ -18,7 +18,7 @@ async def insert_compra(data: CompraCreate) -> str:
     return str(result.inserted_id)
 
 async def get_all_compras() -> list[dict]:
-    docs = await compra_collection.find().to_list(100)
+    docs = await compra_collection.find().to_list()
     return [parse_mongo_id(doc) for doc in docs]
 
 async def get_compra_by_id(compra_id: str) -> dict | None:
@@ -26,6 +26,15 @@ async def get_compra_by_id(compra_id: str) -> dict | None:
         raise InvalidId("ID de compra inválido")
 
     doc = await compra_collection.find_one({"_id": ObjectId(compra_id)})
+    return parse_mongo_id(doc) if doc else None
+
+async def get_by_usuario_and_item_id(usuario_id: str, item_id: str) -> dict | None:
+    if not ObjectId.is_valid(usuario_id):
+        raise InvalidId("ID de usuário inválido")
+    if not ObjectId.is_valid(item_id):
+        raise InvalidId("ID de item inválido")
+
+    doc = await compra_collection.find_one({"usuario_id": usuario_id, "item_id": item_id})
     return parse_mongo_id(doc) if doc else None
 
 async def update_compra(compra_id: str, data: CompraUpdate) -> bool:

@@ -13,7 +13,7 @@ async def insert_familia(data: FamiliaCreate) -> str:
     return str(result.inserted_id)
 
 async def get_all_familias() -> list[dict]:
-    docs = await familia_collection.find().to_list(100)
+    docs = await familia_collection.find().to_list()
     return [parse_mongo_id(doc) for doc in docs]
 
 async def get_familia_by_id(familia_id: str) -> dict | None:

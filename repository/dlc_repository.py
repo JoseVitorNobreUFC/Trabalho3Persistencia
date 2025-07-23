@@ -16,7 +16,7 @@ async def insert_dlc(data: DLCCreate) -> str:
     return str(result.inserted_id)
 
 async def get_all_dlcs() -> list[dict]:
-    docs = await dlc_collection.find().to_list(100)
+    docs = await dlc_collection.find().to_list()
     return [parse_mongo_id(doc) for doc in docs]
 
 async def get_dlc_by_id(dlc_id: str) -> dict | None:

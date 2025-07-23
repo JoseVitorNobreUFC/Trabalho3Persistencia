@@ -13,7 +13,7 @@ async def insert_jogo(jogo: JogoCreate) -> str:
     return str(result.inserted_id)
 
 async def get_all_jogos() -> list[dict]:
-    jogos = await jogo_collection.find().to_list(100)
+    jogos = await jogo_collection.find().to_list()
     return [parse_mongo_id(j) for j in jogos]
 
 async def get_jogo_by_id(jogo_id: str) -> dict | None:

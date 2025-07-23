@@ -6,7 +6,6 @@ from utils.helper import convert_date_to_datetime, parse_mongo_id
 from typing import Optional
 from pymongo import ASCENDING, DESCENDING
 
-# Vamos ter que voltar aqui quando o CRUD de familia estiver pronto
 async def insert_usuario(data: UsuarioCreate) -> str:
     data = data.dict()
     data["data_cadastro"] = convert_date_to_datetime(data["data_cadastro"])
@@ -14,7 +13,7 @@ async def insert_usuario(data: UsuarioCreate) -> str:
     return str(result.inserted_id)
 
 async def get_all_usuarios() -> list[dict]:
-    docs = await usuario_collection.find().to_list(100)
+    docs = await usuario_collection.find().to_list()
     return [parse_mongo_id(doc) for doc in docs]
 
 async def get_usuario_by_id(usuario_id: str) -> dict | None:
