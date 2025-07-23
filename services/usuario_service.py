@@ -130,6 +130,11 @@ async def adicionar_usuario_em_familia(usuario_id: str, familia_id: str) -> bool
         if not familia.get("is_public", True):
             error_(f"[ERRO] Tentativa de ingresso em família privada {familia_id}")
             raise ValueError("Esta família é privada. Use o método autenticado para entrar.")
+          
+        usuario = await usuario_repository.get_usuario_by_id(usuario_id)
+        if usuario["familia_id"] is not None:
+          error_(f"[ERRO] Usuário {usuario_id} ja pertence a uma família")
+          raise ValueError("Usuário ja pertence a uma família")
 
         sucesso = await usuario_repository.adicionar_usuario_em_familia(usuario_id, familia_id)
         if sucesso:
@@ -155,6 +160,11 @@ async def adicionar_usuario_em_familia_privada(usuario_id: str, familia_id: str,
         if familia.get("criador_id") != criador_id:
             error_(f"[ERRO] Criador {criador_id} não autorizado a adicionar usuário na família {familia_id}")
             raise ValueError("Somente o criador da família pode adicionar membros a uma família privada.")
+          
+        usuario = await usuario_repository.get_usuario_by_id(usuario_id)
+        if usuario["familia_id"] is not None:
+          error_(f"[ERRO] Usuário {usuario_id} ja pertence a uma família")
+          raise ValueError("Usuário ja pertence a uma família")
 
         sucesso = await usuario_repository.adicionar_usuario_em_familia(usuario_id, familia_id)
         if sucesso:
