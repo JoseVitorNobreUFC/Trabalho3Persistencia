@@ -120,23 +120,54 @@ async def exibir_quantidade():
   
 async def adicionar_usuario_em_familia(usuario_id: str, familia_id: str) -> bool:
     try:
+        # Verifica se a família existe
         familia = await familia_repository.get_familia_by_id(familia_id)
         if not familia:
             error_(f"[ERRO] Família com ID {familia_id} não encontrada")
             raise ValueError("Família não encontrada")
 
+        # Verifica se a família é privada
+        if not familia.get("is_public", True):
+            error_(f"[ERRO] Tentativa de ingresso em família privada {familia_id}")
+            raise ValueError("Esta família é privada. Use o método autenticado para entrar.")
+
         sucesso = await usuario_repository.adicionar_usuario_em_familia(usuario_id, familia_id)
         if sucesso:
             info_(f"[SUCESSO] Usuário {usuario_id} adicionado à família {familia_id}")
         else:
-            error_(f"[ERRO] Falha ao adicionar usuário {usuario_id} à família {familia_id}")
-            raise ValueError("Esse usuario já está nessa familia")
+            error_(f"[ERRO] Usuário {usuario_id} não encontrado para adicionar à família")
         return sucesso
+
     except InvalidId as e:
-        error_(f"[ERRO] ID fornecido é inválido: {e}")
-        raise ValueError(f"{e}")
+        error_(f"[ERRO] ID inválido: {e}")
+        raise ValueError("ID inválido")
     except Exception as e:
-        error_(f"[ERRO] Erro ao adicionar usuário à família: {e}")
+        error_(f"[ERRO] Falha ao adicionar usuário à família: {e}")
+        raise
+      
+async def adicionar_usuario_em_familia_privada(usuario_id: str, familia_id: str, criador_id: str) -> bool:
+    try:
+        familia = await familia_repository.get_familia_by_id(familia_id)
+        if not familia:
+            error_(f"[ERRO] Família {familia_id} não encontrada")
+            raise ValueError("Família não encontrada")
+
+        if familia.get("criador_id") != criador_id:
+            error_(f"[ERRO] Criador {criador_id} não autorizado a adicionar usuário na família {familia_id}")
+            raise ValueError("Somente o criador da família pode adicionar membros a uma família privada.")
+
+        sucesso = await usuario_repository.adicionar_usuario_em_familia(usuario_id, familia_id)
+        if sucesso:
+            info_(f"[SUCESSO] Usuário {usuario_id} adicionado à família privada {familia_id}")
+        else:
+            error_(f"[ERRO] Falha ao adicionar usuário {usuario_id}")
+        return sucesso
+
+    except InvalidId as e:
+        error_(f"[ERRO] ID inválido: {e}")
+        raise ValueError("ID inválido")
+    except Exception as e:
+        error_(f"[ERRO] Falha ao adicionar usuário à família privada: {e}")
         raise
 
 async def remover_usuario_da_familia(usuario_id: str) -> bool:

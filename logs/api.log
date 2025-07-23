@@ -615,3 +615,16 @@ data_avaliacao
 2025-07-23 18:07:37,631 - INFO - [SUCESSO] Dados das famílias recuperado
 2025-07-23 18:08:24,473 - INFO - [SUCESSO] Perfil do usuário 687d9f367d19253f7c53928d recuperado
 2025-07-23 18:10:21,457 - INFO - [SUCESSO] Dados das famílias recuperado
+2025-07-23 18:12:24,396 - INFO - [SUCESSO] Família criada com ID 68812608b1696edcf52db79c e vinculada ao usuário 687d9f367d19253f7c53928d
+2025-07-23 18:15:18,630 - ERROR - [ERRO] Usuário 687d9f367d19253f7c53928d já é criador da família 687d9fd634988e8641806a68
+2025-07-23 18:15:18,630 - ERROR - [ERRO] Falha ao criar família: Usuário já é criador de uma família
+2025-07-23 18:17:01,252 - INFO - [SUCESSO] Listagem de 9 família(s)
+2025-07-23 18:17:22,113 - INFO - Listagem de 30 usuário(s)
+2025-07-23 18:17:30,101 - INFO - [SUCESSO] Usuário 687d9f367d19253f7c539298 adicionado à família 687d9fd634988e8641806a6f
+2025-07-23 18:19:46,392 - ERROR - [ERRO] Tentativa de ingresso em família privada 687d9fd634988e8641806a6f
+2025-07-23 18:19:46,392 - ERROR - [ERRO] Falha ao adicionar usuário à família: Esta família é privada. Use o método autenticado para entrar.
+2025-07-23 18:22:09,292 - INFO - [SUCESSO] Listagem de 8 família(s)
+2025-07-23 18:22:54,487 - INFO - Listagem de 30 usuário(s)
+2025-07-23 18:23:12,893 - ERROR - [ERRO] Tentativa de ingresso em família privada 687d9fd634988e8641806a6f
+2025-07-23 18:23:12,893 - ERROR - [ERRO] Falha ao adicionar usuário à família: Esta família é privada. Use o método autenticado para entrar.
+2025-07-23 18:23:18,370 - INFO - [SUCESSO] Usuário 687d9f367d19253f7c53929a adicionado à família privada 687d9fd634988e8641806a6f

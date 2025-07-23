@@ -88,6 +88,14 @@ async def adicionar_usuario_em_familia(usuario_id: str, familia_id: str):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+@router.patch("/{criador_id}/adicionarEmFamiliaPrivada/{familia_id}/{usuario_id}")
+async def adicionar_em_familia_privada(usuario_id: str, familia_id: str, criador_id: str):
+    try:
+        sucesso = await usuario_service.adicionar_usuario_em_familia_privada(usuario_id, familia_id, criador_id)
+        return {"success": sucesso}
+    except ValueError as e:
+        raise HTTPException(status_code=403, detail=str(e))
+
 @router.patch("/{usuario_id}/removerDaFamilia")
 async def remover_usuario_da_familia(usuario_id: str):
     try:

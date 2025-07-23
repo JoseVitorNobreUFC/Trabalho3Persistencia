@@ -13,6 +13,11 @@ async def criar_familia(data: FamiliaCreate) -> FamiliaDB:
             error_(f"[ERRO] Usuário com ID {data.criador_id} não encontrado para vincular à família")
             raise ValueError("Usuário criador não encontrado")
 
+        familia_existente = await familia_repository.get_familia_by_criador_id(data.criador_id)
+        if familia_existente:
+            error_(f"[ERRO] Usuário {data.criador_id} já é criador da família {familia_existente['_id']}")
+            raise ValueError("Esse usuário já tem uma familia criada")
+
         id = await familia_repository.insert_familia(data)
         await usuario_repository.adicionar_usuario_em_familia(data.criador_id, id)
         info_(f"[SUCESSO] Família criada com ID {id} e vinculada ao usuário {data.criador_id}")
