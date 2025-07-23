@@ -35,5 +35,5 @@ async def popular():
     result = await collection_familia.insert_many(familias)
     print(f"{len(result.inserted_ids)} familias inseridas.")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     asyncio.run(popular())

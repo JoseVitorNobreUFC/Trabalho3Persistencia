@@ -29,5 +29,5 @@ async def popular():
     result = await collection.insert_many(dlcs)
     print(f"{len(result.inserted_ids)} dlcs inseridas.")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     asyncio.run(popular())
