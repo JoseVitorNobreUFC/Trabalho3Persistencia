@@ -21,10 +21,10 @@ async def obter_perfil_usuario(usuario_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/familia/{familia_id}/valor-total")
-async def obter_valor_total_familia(familia_id: str):
+@router.get("/familia/dados")
+async def obter_dados_familias():
     try:
-        return await query_complexas_service.obter_valor_total_familia(familia_id)
+        return await query_complexas_service.obter_dados_familias()
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:

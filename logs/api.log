@@ -537,3 +537,81 @@ jogo_id
 2025-07-23 17:08:50,664 - INFO - [SUCESSO] Listagem de 1 avaliação(ões)
 2025-07-23 17:09:29,531 - ERROR - [ERRO] DLC com id 68784fedf83530f11d792521 nao encontrado
 2025-07-23 17:09:36,837 - ERROR - [ERRO] Jogo com ID 68784fedf83530f11d792521 não encontrado
+2025-07-23 17:41:01,647 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-23 17:57:55,807 - ERROR - [ERRO] Falha ao calcular valor total das família: name 'familia_collection' is not defined
+2025-07-23 17:58:16,628 - INFO - [SUCESSO] Dados das famílias recuperado
+2025-07-23 17:58:42,900 - INFO - [SUCESSO] Dados das famílias recuperado
+2025-07-23 17:59:02,849 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-23 17:59:15,517 - INFO - Listagem de 30 usuário(s)
+2025-07-23 17:59:22,664 - ERROR - [ERRO] Falha ao obter perfil do usuário 687d9f367d19253f7c53928d: id must be an instance of (bytes, str, ObjectId), not <class 'list'>
+2025-07-23 17:59:28,704 - ERROR - [ERRO] Falha ao obter perfil do usuário 687d9f367d19253f7c53928d: id must be an instance of (bytes, str, ObjectId), not <class 'list'>
+2025-07-23 17:59:35,117 - INFO - [SUCESSO] Reviews do jogo 687d9f367d19253f7c53928d recuperadas
+2025-07-23 18:00:37,674 - ERROR - [ERRO] Falha ao obter perfil do usuário 687d9f367d19253f7c53928d: id must be an instance of (bytes, str, ObjectId), not <class 'list'>
+2025-07-23 18:01:57,390 - INFO - [SUCESSO] Listagem de 30 jogo(s)
+2025-07-23 18:02:03,465 - INFO - [SUCESSO] Listagem de 30 DLC(s)
+2025-07-23 18:02:09,832 - INFO - Listagem de 30 usuário(s)
+2025-07-23 18:02:15,233 - INFO - [SUCESSO] Listagem de 8 família(s)
+2025-07-23 18:02:21,673 - INFO - [SUCESSO] Listagem de 0 compra(s).
+2025-07-23 18:02:26,498 - INFO - [SUCESSO] Listagem de 0 compra(s).
+2025-07-23 18:02:33,833 - INFO - [SUCESSO] Listagem de 100 avaliação(ões)
+2025-07-23 18:02:33,834 - ERROR - [ERRO] Erro ao listar avaliações: 3 validation errors for AvaliacaoDB
+item_id
+  Input should be a valid string [type=string_type, input_value=['68784fedf83530f11d7925cd'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+nota
+  Field required [type=missing, input_value={'_id': '688122cef1b12b26...forma_pagamento': 'Pix'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+data_avaliacao
+  Field required [type=missing, input_value={'_id': '688122cef1b12b26...forma_pagamento': 'Pix'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-23 18:03:29,784 - ERROR - [ERRO] Falha ao obter perfil do usuário 687d9f367d19253f7c53928d: id must be an instance of (bytes, str, ObjectId), not <class 'list'>
+2025-07-23 18:03:34,584 - ERROR - [ERRO] Falha ao calcular valor total das família: id must be an instance of (bytes, str, ObjectId), not <class 'list'>
+2025-07-23 18:03:36,672 - ERROR - [ERRO] Falha ao calcular valor total das família: id must be an instance of (bytes, str, ObjectId), not <class 'list'>
+2025-07-23 18:03:45,166 - INFO - [SUCESSO] Reviews do jogo 687d9f367d19253f7c53928d recuperadas
+2025-07-23 18:03:54,058 - INFO - [SUCESSO] Listagem de 100 avaliação(ões)
+2025-07-23 18:03:54,058 - ERROR - [ERRO] Erro ao listar avaliações: 2 validation errors for AvaliacaoDB
+item_id
+  Input should be a valid string [type=string_type, input_value=['68784fedf83530f11d7925de'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+data_avaliacao
+  Field required [type=missing, input_value={'_id': '688123e828026731...: 'Achei mais ou menos'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-23 18:03:55,170 - INFO - [SUCESSO] Listagem de 100 avaliação(ões)
+2025-07-23 18:03:55,170 - ERROR - [ERRO] Erro ao listar avaliações: 2 validation errors for AvaliacaoDB
+item_id
+  Input should be a valid string [type=string_type, input_value=['68784fedf83530f11d7925de'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+data_avaliacao
+  Field required [type=missing, input_value={'_id': '688123e828026731...: 'Achei mais ou menos'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-23 18:04:03,877 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 18:04:03,877 - ERROR - [ERRO] Falha ao listar compras: 1 validation error for CompraDB
+item_id
+  Input should be a valid string [type=string_type, input_value=['68784fedf83530f11d7925de'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-23 18:04:14,918 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 18:04:14,918 - ERROR - [ERRO] Falha ao listar compras: 1 validation error for CompraDB
+item_id
+  Input should be a valid string [type=string_type, input_value=['68784fedf83530f11d7925de'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-07-23 18:05:19,438 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 18:05:25,844 - INFO - [SUCESSO] Listagem de 100 avaliação(ões)
+2025-07-23 18:05:25,844 - ERROR - [ERRO] Erro ao listar avaliações: 1 validation error for AvaliacaoDB
+data_avaliacao
+  Field required [type=missing, input_value={'_id': '6881245b95941ce2... não vale esse preço'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-23 18:05:49,446 - INFO - [SUCESSO] Listagem de 100 avaliação(ões)
+2025-07-23 18:05:49,446 - ERROR - [ERRO] Erro ao listar avaliações: 1 validation error for AvaliacaoDB
+data_avaliacao
+  Field required [type=missing, input_value={'_id': '6881247997d89de5...: 'Achei mais ou menos'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-23 18:05:50,370 - INFO - [SUCESSO] Listagem de 100 avaliação(ões)
+2025-07-23 18:05:50,370 - ERROR - [ERRO] Erro ao listar avaliações: 1 validation error for AvaliacaoDB
+data_avaliacao
+  Field required [type=missing, input_value={'_id': '6881247997d89de5...: 'Achei mais ou menos'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+2025-07-23 18:07:27,560 - INFO - [SUCESSO] Listagem de 100 avaliação(ões)
+2025-07-23 18:07:33,304 - INFO - [SUCESSO] Listagem de 180 compra(s).
+2025-07-23 18:07:37,631 - INFO - [SUCESSO] Dados das famílias recuperado
+2025-07-23 18:08:24,473 - INFO - [SUCESSO] Perfil do usuário 687d9f367d19253f7c53928d recuperado
+2025-07-23 18:10:21,457 - INFO - [SUCESSO] Dados das famílias recuperado

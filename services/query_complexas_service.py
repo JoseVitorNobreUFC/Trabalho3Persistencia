@@ -26,14 +26,14 @@ async def obter_perfil_usuario(usuario_id: str):
         error_(f"[ERRO] Falha ao obter perfil do usuário {usuario_id}: {e}")
         raise
 
-async def obter_valor_total_familia(familia_id: str):
+async def obter_dados_familias():
     try:
-        resultado = await query_complexas_repository.obter_valor_total_familia(familia_id)
-        info_(f"[SUCESSO] Valor total da família {familia_id} recuperado")
+        resultado = await query_complexas_repository.obter_dados_familias()
+        info_(f"[SUCESSO] Dados das famílias recuperado")
         return resultado
     except InvalidId as e:
         error_(f"[ERRO] ID inválido: {e}")
         raise ValueError("ID inválido")
     except Exception as e:
-        error_(f"[ERRO] Falha ao calcular valor total da família {familia_id}: {e}")
+        error_(f"[ERRO] Falha ao calcular valor total das família: {e}")
         raise

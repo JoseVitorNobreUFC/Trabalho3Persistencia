@@ -1,4 +1,4 @@
-from db.database import avaliacao_collection, compra_collection, usuario_collection, jogo_collection, dlc_collection
+from db.database import avaliacao_collection, compra_collection, usuario_collection, jogo_collection, dlc_collection, familia_collection
 from bson import ObjectId
 from statistics import mean
 
@@ -115,18 +115,62 @@ async def obter_perfil_usuario(usuario_id: str):
         "compras": compras
     }
 
-async def obter_valor_total_familia(familia_id: str):
-    familia_oid = ObjectId(familia_id)
-    usuarios = await usuario_collection.find({"familia_id": familia_oid}).to_list(100)
-    usuario_ids = [u["_id"] for u in usuarios]
-    pipeline = [
-        {"$match": {"usuario_id": {"$in": usuario_ids}}},
-        {
-            "$group": {
-                "_id": None,
-                "valor_total": {"$sum": "$preco_pago"}
-            }
-        }
-    ]
-    result = await compra_collection.aggregate(pipeline).to_list(length=1)
-    return {"valor_total": result[0]["valor_total"] if result else 0}
+async def obter_dados_familias():
+    familias = await familia_collection.find({}).to_list(length=None)
+    resultado = []
+
+    for familia in familias:
+        familia_id = str(familia["_id"])
+        nome_familia = familia["nome"]
+
+        # Buscar usuários da família
+        usuarios = await usuario_collection.find({"familia_id": familia_id}).to_list(length=None)
+        quantidade_usuarios = len(usuarios)
+        valor_total_familia = 0.0
+        usuarios_info = []
+
+        for usuario in usuarios:
+            usuario_id = str(usuario["_id"])
+            nome_usuario = usuario["nome"]
+            compras_usuario = await compra_collection.find({"usuario_id": usuario_id}).to_list(length=None)
+
+            total_gasto = 0.0
+            jogos_comprados = []
+
+            for compra in compras_usuario:
+                preco_pago = compra["preco_pago"] / 100
+                item_id = compra["item_id"]
+
+                # Buscar nome do item
+                nome_item = "Desconhecido"
+                jogo = await jogo_collection.find_one({"_id": ObjectId(item_id)})
+                if jogo:
+                    nome_item = jogo["titulo"]
+                else:
+                    dlc = await dlc_collection.find_one({"_id": ObjectId(item_id)})
+                    if dlc:
+                        nome_item = dlc["titulo"]
+
+                jogos_comprados.append({
+                    "titulo": nome_item,
+                    "preco_pago": round(preco_pago, 2)
+                })
+
+                total_gasto += preco_pago
+
+            valor_total_familia += total_gasto
+
+            usuarios_info.append({
+                "nome": nome_usuario,
+                "jogos_comprados": jogos_comprados,
+                "total_gasto": round(total_gasto, 2)
+            })
+
+        resultado.append({
+            "nome": nome_familia,
+            "quantidade_usuarios": quantidade_usuarios,
+            "valor_total_gasto": round(valor_total_familia, 2),
+            "usuarios": usuarios_info
+        })
+
+    return resultado
